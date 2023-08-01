@@ -1,0 +1,10 @@
+.wave-1 {
+    position: relative;
+}
+
+.wave {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+}

@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/Header'
 import Home from './components/Home'
+import Waves from './components/Waves'
 
 
 
@@ -11,6 +12,9 @@ function App() {
     <div>
       <Header />
       <Home name="Marcelina" />
+      <Waves />
+
+
 
 
 
