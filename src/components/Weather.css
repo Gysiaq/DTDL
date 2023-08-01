@@ -1,0 +1,64 @@
+.weather-container {
+    margin-top: 128px;
+
+}
+
+.h2-style {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.weather-location {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.weather-location-input-search {
+    display: flex;
+    margin-right: 16px;
+
+}
+
+.weather-location-input-search {
+    border: 4px solid;
+    border-color: #025464;
+    border-radius: 20px;
+    background-color: #F8F1F1;
+}
+
+.weather-location-input-search-button {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.bi-search {
+    height: 40px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 16px;
+    font-size: 24px;
+}
+
+.weather-location-input {
+    margin-left: 16px;
+    width: 320px;
+    height: 64px;
+    background-color: transparent;
+    border: transparent;
+
+}
+
+.weather-location-button {
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.forcast {
+    margin-top: 96px;
+    display: flex;
+    justify-content: space-around;
+}
