@@ -1,0 +1,16 @@
+.daily-container {
+    margin-top: 128px;
+}
+
+
+.h2-style-daily {
+    display: flex;
+    justify-content: center;
+}
+
+
+.daiylist-callender-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 128px;
+}

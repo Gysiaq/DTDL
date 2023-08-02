@@ -3,7 +3,7 @@ import './CurrentWeather.css'
 
 function CurrentWeather() {
     return (
-        <div>
+        <div className='current-weather-container'>
             <h3 className='heading-3'>Today</h3>
             <h5>06/27/2023</h5>
 

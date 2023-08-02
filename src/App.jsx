@@ -6,6 +6,8 @@ import Home from './components/Home'
 import Note from './components/Note'
 import ToDoList from './components/ToDoList'
 import Waves from './components/Waves'
+import WavesBottom from './components/WavesBottom'
+import WavesTop from './components/WavesTop'
 import Weather from './components/Weather'
 
 
@@ -21,8 +23,10 @@ function App() {
       <Weather />
       <DailyTask />
 
-      {/* <ToDoList />
-      <Note /> */}
+      <WavesTop />
+      <ToDoList />
+      <WavesBottom />
+      <Note />
 
 
 
