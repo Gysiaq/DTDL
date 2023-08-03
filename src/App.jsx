@@ -3,11 +3,11 @@ import './App.css'
 import DailyTask from './components/DailyTask'
 import Header from './components/Header'
 import Home from './components/Home'
-import Note from './components/Note'
+import NotesList from './components/NotesList'
 import ToDoList from './components/ToDoList'
 import Waves from './components/Waves'
 import WavesBottom from './components/WavesBottom'
-import WavesTop from './components/WavesTop'
+
 import Weather from './components/Weather'
 
 
@@ -23,10 +23,10 @@ function App() {
       <Weather />
       <DailyTask />
 
-      <WavesTop />
+
       <ToDoList />
       <WavesBottom />
-      <Note />
+      <NotesList />
 
 
 

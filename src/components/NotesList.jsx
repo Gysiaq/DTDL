@@ -1,10 +1,10 @@
-import React from 'react'
-import './Note.css'
+import React, { useState } from 'react'
 
-function Note() {
+function NotesList({ }) {
+
     return (
         <div className='note-container'>
-            <h2 className='heading-2 h2-style-note'>Note</h2>
+            <h2 className='heading-2 h2-style-note'>Notes</h2>
 
             <div className='note-button-position'>
                 <button className='note-button note-button-style note-button-text'><i class="bi bi-plus-lg"></i> New note</button>
@@ -18,4 +18,4 @@ function Note() {
     )
 }
 
-export default Note
+export default NotesList

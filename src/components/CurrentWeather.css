@@ -1,6 +1,47 @@
 .current-weather-container {
     width: 40vw;
-    border: 4px solid;
-    border-color: #025464;
     border-radius: 10px;
+    background: rgb(2, 84, 100);
+    background: linear-gradient(180deg, rgba(2, 84, 100, 1) 0%, rgba(121, 206, 234, 1) 55%, rgba(121, 206, 234, 0.6) 65%, rgba(121, 206, 234, 0.3) 80%, rgba(121, 206, 234, 0) 95%);
+}
+
+.h3-style-currentweather {
+    display: flex;
+    justify-content: center;
+    color: #F8F1F1;
+}
+
+.h5-style-currentwather-date {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: lighter;
+    font-family: 'Ubuntu', sans-serif;
+    color: #F8F1F1;
+}
+
+.weather-today-container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 64px;
+}
+
+.bi-cloud-fill {
+    font-size: 156px;
+    margin-right: 38px;
+
+}
+
+.weather-today-details {
+    display: flex;
+    flex-direction: column;
+    color: #F8F1F1;
+    font-weight: bold;
+}
+
+.h4-style-weather-details {
+    margin-top: 14px;
 }
