@@ -4,7 +4,6 @@ import './DailyWeather.css'
 function DailyWeather() {
     return (
         <div>
-            <h3 className='heading-3'>7 days</h3>
 
             <div className='daily-weather-container'>
                 <div className='daily-weather'>

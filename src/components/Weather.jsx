@@ -9,8 +9,8 @@ import DailyWeather from './DailyWeather'
 
 function Weather() {
     return (
-        <div className='weather-container'>
-            <h2 className='heading-2 h2-style'>Weather</h2>
+        <div className='weather-container' id='weather'>
+            <h2 className='heading-2 h2-style' >Weather</h2>
             <div className='weather-location'>
                 <div className='weather-location-input-search'>
                     <input className="weather-location-input paragraph" placeholder='Location...'></input>

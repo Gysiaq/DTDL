@@ -1,8 +1,10 @@
 .current-weather-container {
-    width: 40vw;
-    border-radius: 10px;
-    background: rgb(2, 84, 100);
-    background: linear-gradient(180deg, rgba(2, 84, 100, 1) 0%, rgba(121, 206, 234, 1) 55%, rgba(121, 206, 234, 0.6) 65%, rgba(121, 206, 234, 0.3) 80%, rgba(121, 206, 234, 0) 95%);
+    width: 600px;
+    border-radius: 5px;
+    margin-left: 24px;
+    margin-right: 24px;
+    background: rgb(85, 178, 209);
+    background: linear-gradient(180deg, rgba(85, 178, 209, 0.5) 0%, rgba(85, 178, 209, 0) 80%);
 }
 
 .h3-style-currentweather {

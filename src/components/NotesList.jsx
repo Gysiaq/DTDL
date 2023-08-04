@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function NotesList({ }) {
 
     return (
-        <div className='note-container'>
+        <div className='note-container' id='notelist'>
             <h2 className='heading-2 h2-style-note'>Notes</h2>
 
             <div className='note-button-position'>
