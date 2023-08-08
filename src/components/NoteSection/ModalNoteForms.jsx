@@ -7,11 +7,15 @@ function ModalNoteForms({addNote}) {
         description: ''
     })
 
-    
-    
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     if(note === "") return 
+
+        
+    // }
 
     return (
-        <form >
+        <form onSubmit={handleSubmit}>
             <div className='note-form-container'>
                 <h5 className='heading-5 note-form-title'>Title</h5>
                 <input className='note-form-title-input paragraph' placeholder=' title' value={note.title} onChange={e => {setNote(e.target.value)}}></input>
