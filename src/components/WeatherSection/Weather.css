@@ -23,8 +23,8 @@
 
 .weather-location-input-search {
     border: 4px solid;
-    border-color: #025464;
-    border-radius: 20px;
+    border-color: black;
+    /* border-radius: 20px; */
     background-color: #F8F1F1;
 }
 

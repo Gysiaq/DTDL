@@ -18,10 +18,13 @@
 .header-button {
     width: 118px;
     height: 46px;
-    background: linear-gradient(#F8F1F1, #F8F1F1) padding-box,
-        linear-gradient(to bottom right, #E8AA42, #E57C23) border-box;
-    border-radius: 45px;
-    border: 4px solid transparent;
+    /* background: linear-gradient(#F8F1F1, #F8F1F1) padding-box,
+        linear-gradient(to bottom right, #E8AA42, #E57C23) border-box; */
+    /* border-radius: 45px; */
+    /* border: 4px solid transparent; */
+    border: 4px solid;
+    border-color: black;
     cursor: pointer;
 
 }
+

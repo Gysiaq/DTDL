@@ -4,18 +4,10 @@ import { IconButton } from '@mui/material';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { style } from '@mui/system';
-
-
 
 
 function Todo() {
     const [priority, setPriority] = useState(false)
-    const [todo, setTodo] = useState({
-        title: "",
-        deadline: new Date(),
-        description: ''
-    })
 
     const toggleColor = () => {
         setPriority(!priority);
@@ -32,7 +24,7 @@ function Todo() {
                             onClick={toggleColor}>
                             <StarOutlineIcon fontSize='large'></StarOutlineIcon>
                         </IconButton>
-                        <input className='todo-title paragraph' placeholder='title' value={todo.title} onChange={(e) => { e.target.value(setTodo.title) }}></input>
+                        <input className='todo-title paragraph' placeholder='title'></input>
                     </div>
                     <div className='todo-edit-delete-button'>
                         <IconButton>
@@ -43,8 +35,8 @@ function Todo() {
                         </IconButton>
                     </div>
                 </div>
-                <input className='todo-date paragraph' type='date' value={todo.deadline}></input>
-                <textarea className='todo-description paragraph' placeholder='description' value={todo.description}></textarea>
+                <input className='todo-date paragraph' type='date' ></input>
+                <textarea className='todo-description paragraph' placeholder='description'></textarea>
             </form >
         </div >
     )

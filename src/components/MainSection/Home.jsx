@@ -3,13 +3,17 @@ import './Home.css'
 import { Link } from "react-scroll";
 
 
-function Home({ name }) {
+function Home() {
 
 
     return (
         <div className='home-main'>
-            <h1 className='heading-1 h1-style'>Have a nice Day</h1>
-            <h1 className='heading-1 h1-style'>{name}</h1>
+            {/* <div>
+                <div>
+                    <h1 className='heading-1 h1-style text_shadows'>Welcome</h1>
+                    <h1 className='heading-1 h1-style h1-style-5 '>{name}</h1>
+                </div>
+            </div> */}
 
             <div className='link-section'>
                 <Link
