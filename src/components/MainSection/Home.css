@@ -28,7 +28,7 @@
     color: #F8F1F1;
     background: linear-gradient(to bottom right, #E8AA42, #E57C23);
     border: 4px solid;
-    /* border-radius: 90px; */
+    
     border-color: black;
     margin-left: 32px;
     margin-right: 32px;
@@ -37,8 +37,8 @@
 
 }
 
+
 .bi {
 
     color: black;
 }
-

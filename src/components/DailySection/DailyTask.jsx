@@ -9,7 +9,7 @@ function DailyTask() {
 
             <div className='daiylist-callender-container'>
                 <div className='callender'>
-                    {/* <Callender /> */}
+                    <Callender />
                 </div>
 
                 <div className='dailylist'>

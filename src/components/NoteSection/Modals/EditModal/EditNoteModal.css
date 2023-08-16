@@ -1,0 +1,51 @@
+.modal-edit-background {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(200, 200, 200, 0.75);
+    position: fixed;
+    margin: auto;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.modal-edit-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-edit-container {
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.modal-edit-close-button-position {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-right: 5px;
+} 
+
+.modal-edit-close-button-style {
+    width: 40px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.modal-edit-form-section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

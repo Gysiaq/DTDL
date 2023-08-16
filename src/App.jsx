@@ -22,15 +22,9 @@ function App() {
       <Waves />
       <Weather />
       <DailyTask />
-
-
       <ToDoList />
       <WavesBottom />
       <NotesList />
-
-
-
-
     </div>
   )
 }

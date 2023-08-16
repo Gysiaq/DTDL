@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import dayjs from 'dayjs';
+import { DemoItem } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
 function Callender() {
+    const [dateValue, setDateValue] = useState(dayjs(Date()))
+    
     return (
-        <iframe src="https://calendar.google.com/calendar/embed?src=gysiaq%40gmail.com&ctz=Europe%2FWarsaw" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    )
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoItem>
+                <DateCalendar value={dateValue} onChange={(newValue) => setDateValue(newValue)} views={['year', 'month', 'day']}/>
+            </DemoItem>
+        </LocalizationProvider>         
+
+        )
 }
 
 export default Callender
