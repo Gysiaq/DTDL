@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditNoteModal from "./Modals/EditModal/EditNoteModal";
 import "./Note.css";
-import { IconButton } from "@mui/material";
+
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -15,26 +15,26 @@ function Note({ id, note, deleteNote, editNote }) {
     return (
         <div className="note-container">
             <label className="text-style">
-                <div className="note-buttons-section">
-                    <IconButton
-                        className="note-edit-button"
-                        onClick={() => {
-                            setIsEditModalOpen(true);
-                        }}
-                    >
-                        <EditIcon />
-                    </IconButton>
-                    <IconButton
-                        className="note-close-button"
-                        onClick={handleDelete}
-                    >
-                        <DeleteIcon />
-                    </IconButton>
-                </div>
                 <span className="note-title heading-5">{note.title}</span>
                 <span className="note-description paragraph">
                     {note.description}
                 </span>
+                <div className="note-buttons-section">
+                    <button
+                        className="note-edit-button paragraph"
+                        onClick={() => {
+                            setIsEditModalOpen(true);
+                        }}
+                    >
+                        <EditIcon fontSize="12px" /> Edit
+                    </button>
+                    <button
+                        className="note-close-button paragraph"
+                        onClick={handleDelete}
+                    >
+                        <DeleteIcon fontSize="12px" /> Delete
+                    </button>
+                </div>
             </label>
             {isEditModalOpen && (
                 <EditNoteModal

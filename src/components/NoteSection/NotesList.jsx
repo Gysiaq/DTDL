@@ -43,7 +43,7 @@ function NotesList() {
                     handleSave={addNote}
                 />
             )}
-            <div className="note">
+            <div className="note paragraph">
                 {noteList.length === 0 && "Your notes are empty"}
                 {noteList.map((note) => (
                     <Note
