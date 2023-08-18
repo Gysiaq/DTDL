@@ -18,7 +18,11 @@ function EditNoteModal({ setIsEditModalOpen, note, editNote }) {
                     </button>
                 </div>
                 <div className="modal-edit-form-section">
-                    <EditNoteForm note={note} editNote={editNote} />
+                    <EditNoteForm
+                        note={note}
+                        editNote={editNote}
+                        setIsEditModalOpen={setIsEditModalOpen}
+                    />
                 </div>
             </div>
         </div>

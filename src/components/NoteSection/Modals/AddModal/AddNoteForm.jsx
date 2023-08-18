@@ -2,26 +2,19 @@ import React, { useState } from "react";
 import "./AddNoteForm.css";
 
 function AddNoteForm({ save }) {
-    const [noteTitle, setNoteTitle] = useState("");
-    const [noteDescription, setNoteDescription] = useState("");
+    const [note, setNote] = useState({
+        title: "",
+        description: "",
+        id: crypto.randomUUID(),
+    });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-
-        if (name === "noteTitle") {
-            setNoteTitle(value);
-        } else {
-            setNoteDescription(value);
-        }
+        setNote({ ...note, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        save({
-            title: noteTitle,
-            description: noteDescription,
-            id: crypto.randomUUID(),
-        });
+        save(note);
     };
 
     return (
@@ -31,9 +24,9 @@ function AddNoteForm({ save }) {
                 <input
                     className="note-form-title-input paragraph"
                     placeholder=" title"
-                    value={noteTitle}
+                    value={note.title}
                     onChange={handleChange}
-                    name="noteTitle"
+                    name="title"
                 ></input>
             </div>
             <div>
@@ -41,9 +34,9 @@ function AddNoteForm({ save }) {
                 <textarea
                     className="note-form-description-input paragraph"
                     placeholder=" desscription"
-                    value={noteDescription}
+                    value={note.description}
                     onChange={handleChange}
-                    name="noteDescription"
+                    name="description"
                 ></textarea>
             </div>
             <div className="note-form-save-button-position">

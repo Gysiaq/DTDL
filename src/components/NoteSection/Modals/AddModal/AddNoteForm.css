@@ -45,13 +45,20 @@
 }
 
 .note-form-save-button {
+    cursor: pointer;
     width: 100px;
     height: 50px;
     border: 4px solid;
+    border-color: #025464;
+    background-color: #F8F1F1;
+    color: #025464;
+    font-weight: bold;
+
+}
+
+.note-form-save-button:hover {
     border-color: black;
     background-color: #025464;
     color: #F8F1F1;
-    font-weight: bold;
-
 }
 

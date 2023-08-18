@@ -19,23 +19,23 @@ function Note({ id, note, deleteNote, editNote }) {
                 <span className="note-description paragraph">
                     {note.description}
                 </span>
-                <div className="note-buttons-section">
-                    <button
-                        className="note-edit-button paragraph"
-                        onClick={() => {
-                            setIsEditModalOpen(true);
-                        }}
-                    >
-                        <EditIcon fontSize="12px" /> Edit
-                    </button>
-                    <button
-                        className="note-close-button paragraph"
-                        onClick={handleDelete}
-                    >
-                        <DeleteIcon fontSize="12px" /> Delete
-                    </button>
-                </div>
             </label>
+            <div className="note-buttons-section">
+                <button
+                    className="note-edit-button paragraph"
+                    onClick={() => {
+                        setIsEditModalOpen(true);
+                    }}
+                >
+                    <EditIcon fontSize="12px" /> Edit
+                </button>
+                <button
+                    className="note-close-button paragraph"
+                    onClick={handleDelete}
+                >
+                    <DeleteIcon fontSize="12px" /> Delete
+                </button>
+            </div>
             {isEditModalOpen && (
                 <EditNoteModal
                     setIsEditModalOpen={setIsEditModalOpen}
