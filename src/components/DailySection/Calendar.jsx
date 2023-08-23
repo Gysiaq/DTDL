@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Calendar.css";
 import dayjs from "dayjs";
 import { DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -9,7 +10,10 @@ function Calendar() {
     const [dateValue, setDateValue] = useState(dayjs(Date()));
 
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider
+            className="calendar-container"
+            dateAdapter={AdapterDayjs}
+        >
             <DemoItem>
                 <DateCalendar
                     value={dateValue}

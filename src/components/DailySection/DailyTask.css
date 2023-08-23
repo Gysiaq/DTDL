@@ -12,5 +12,21 @@
 .daiylist-callender-container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-top: 128px;
+}
+
+/* .callender {
+    margin-left: 128px;
+} */
+
+.dailylist {
+    display: flex;
+    flex-direction: column;
+}
+
+.dailylist-hr {
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 64px;
+    margin-bottom: 32px;
 }

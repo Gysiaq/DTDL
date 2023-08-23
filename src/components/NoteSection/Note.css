@@ -15,21 +15,16 @@
     margin-top: 16px;
     margin-right: 32px;
     margin-left: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: inline-block;
+    word-wrap: break-all;
 }
 
 .note-description {
-
     margin-top: 32px;
     margin-left: 32px;
     margin-right: 32px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    white-space: pre-wrap;
+    display: inline-block;
+    word-wrap: break-all;
 }
 
 .note-buttons-section {
@@ -42,9 +37,6 @@
 
 
 .note-edit-button {
-    position: sticky;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,10 +55,7 @@
 }
 
 
-.note-close-button {
-    position: sticky;
-    top: 0;
-    left: 0;
+.note-delete-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +68,7 @@
     border-color: black;
 }
 
-.note-close-button:hover {
+.note-delete-button:hover {
     background-color: #ffffff;
 }
 

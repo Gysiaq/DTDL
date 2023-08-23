@@ -1,91 +1,74 @@
 .todo-container {
-    margin-left: 48px;
     margin-top: 96px;
-    max-width: 500px;
-    /* border-radius: 10px; */
-    /* background: linear-gradient(#F8F1F1, #F8F1F1) padding-box,
-        linear-gradient(to bottom right, #E8AA42, #E57C23) border-box;
-    border: 4px solid transparent; */
+    width: 350px;
+    min-height: 300px;
     border: 4px solid;
     border-color: black;
     background-color: #F8F1F1;
-
+    -webkit-box-shadow: 9px 9px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 9px 9px 0px 0px rgba(0, 0, 0, 1);
+    box-shadow: 9px 9px 0px 0px rgba(0, 0, 0, 1);
 }
 
-.todo-form {
+.todo-container {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
-    margin-top: 12px;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-.todo-main-section {
-    display: flex;
-    justify-content: space-between;
-}
-
-.todo-priority-title {
-    display: flex;
-}
-
-.todo-edit-delete-button {
-    visibility: hidden;
-}
-
-.todo-container:hover {
-    .todo-edit-delete-button {
-        visibility: visible;
-    }
 }
 
 .todo-title {
-    margin-left: 8px;
-    width: 242px;
-    border: 1px solid;
-    border-color: white;
-    background-color: #F8F1F1;
+    margin-top: 16px;
+    margin-left: 10px;
 }
 
-.todo-title:focus,
-.todo-title:active {
-    outline: none;
-    box-shadow: none;
-}
-
-.todo-date {
-    margin-top: 28px;
-    width: 242px;
-    border: 1px solid;
-    border-color: white;
-    color: rgba(0, 0, 0, 0.5);
-    background-color: #F8F1F1;
-}
-
-.todo-date:focus,
-.todo-date:active {
-    outline: none;
-    box-shadow: none;
-    color: black;
+.todo-deadline {
+    margin-top: 16px;
+    margin-left: 10px;
 }
 
 .todo-description {
-    margin-top: 28px;
-    margin-bottom: 12px;
-    max-width: 484px;
-    min-width: 484PX;
-    width: 484px;
-    min-height: 250px;
-    border: 1px solid;
-    color: rgba(0, 0, 0, 0.5);
-    border-color: white;
-    background-color: #F8F1F1;
-
+    margin-top: 16px;
+    margin-left: 10px;
 }
 
-.todo-description:focus,
-.todo-description:active {
-    outline: none;
-    box-shadow: none;
+.todo-button-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.todo-edit-button {
+    margin-right: 8px;
+    height: 32px;
+    width: 100px;
+    border: 3px solid;
+    background-color: #F8F1F1;
+    color: #008CBA;
+    border-color: #008CBA;
+    cursor: pointer;
+}
+.todo-edit-button:hover {
+    background-color: #008CBA;
     color: black;
+    border-color: black;
+}
+
+
+.todo-delete-button {
+    margin-right: 8px;
+    height: 32px;
+    width: 100px;
+    border: 3px solid;
+    background-color: #F8F1F1;
+    color: #f44336;
+    border-color: #f44336;
+    cursor: pointer;
+}
+
+.todo-delete-button:hover {
+    background-color: #f44336;
+    color: black;
+    border-color: black;
 }

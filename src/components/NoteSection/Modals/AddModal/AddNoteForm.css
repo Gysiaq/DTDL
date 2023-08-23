@@ -28,6 +28,7 @@
     resize: none;
     border: 4px solid;
     border-color: #F8F1F1;
+    word-wrap: break-word;
 }
 
 .note-form-description-input:focus,

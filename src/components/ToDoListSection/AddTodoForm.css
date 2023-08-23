@@ -1,0 +1,91 @@
+.todo-form-title {
+    margin-bottom: 5px;
+}
+
+.todo-form-title-input{
+    width: 550px;
+    height: 35px;
+    border: 4px solid;
+    border-color: #F8F1F1;
+}
+.todo-form-title-input:focus,
+.ntodo-form-title-input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.todo-form-important-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 24px;
+
+}
+.todo-form-deadline {
+    margin-right: 128px;
+}
+
+.todo-form-deadline-input{
+    margin-top: 5px;
+    border: 4px solid;
+    border-color: #F8F1F1;
+}
+.todo-form-deadline-input:focus,
+.todo-form-deadline-input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.todo-form-priority{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.todo-form-description {
+    margin-top: 24px;
+    margin-bottom: 5px;
+}
+.todo-form-description-input{
+    max-width: 550px;
+    min-width: 550px;
+    max-height: 200px;
+    min-height: 200px;
+    resize: none;
+    border: 4px solid;
+    border-color: #F8F1F1;
+}
+
+.todo-form-description-input:focus,
+.todo-form-description-input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.todo-form-save-button-position {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-right: 5px;
+}
+
+.todo-form-save-button {
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border: 4px solid;
+    border-color: #025464;
+    background-color: #F8F1F1;
+    color: #025464;
+    font-weight: bold;
+
+}
+
+.todo-form-save-button:hover {
+    border-color: black;
+    background-color: #025464;
+    color: #F8F1F1;
+}

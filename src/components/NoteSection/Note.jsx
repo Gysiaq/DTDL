@@ -30,7 +30,7 @@ function Note({ id, note, deleteNote, editNote }) {
                     <EditIcon fontSize="12px" /> Edit
                 </button>
                 <button
-                    className="note-close-button paragraph"
+                    className="note-delete-button paragraph"
                     onClick={handleDelete}
                 >
                     <DeleteIcon fontSize="12px" /> Delete

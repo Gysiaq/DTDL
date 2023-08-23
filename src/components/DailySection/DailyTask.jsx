@@ -1,6 +1,7 @@
 import React from "react";
 import "./DailyTask.css";
 import Calendar from "./Calendar";
+import DailyTodo from "./DailyTodo";
 
 function DailyTask() {
     return (
@@ -12,7 +13,12 @@ function DailyTask() {
                     <Calendar />
                 </div>
 
-                <div className="dailylist">CheckList</div>
+                <div className="dailylist">
+                    <DailyTodo />
+                    <DailyTodo />
+                    <hr className="dailylist-hr"></hr>
+                    <DailyTodo />
+                </div>
             </div>
         </div>
     );

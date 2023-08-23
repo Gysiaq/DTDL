@@ -34,7 +34,7 @@ function NotesList() {
                     className="note-button note-button-style note-button-text"
                     onClick={() => setIsModalOpen(true)}
                 >
-                    <i class="bi bi-plus-lg"></i> New note
+                    <i className="bi bi-plus-lg"></i> New note
                 </button>
             </div>
             {isModalOpen && (

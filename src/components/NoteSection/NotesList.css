@@ -13,57 +13,36 @@
 }
 
 .note-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position:relative;
     display:inline-block;
-}
-
-
-.note-button-style{
-    height: 64px;
-    width: 220px;
-    background: #F8F1F1;
-    cursor: pointer;
 }
 
 .note-button-text{
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
     font-size: 28px;
+}
+
+.note-button-style{
+    height: 64px;
+    width: 220px;
+    background: #F8F1F1;
+    cursor: pointer;
     border: 0.5px solid;
     border-color: black;
     border-radius: 5px;
-
     -webkit-box-shadow:inset 0 1px 0 #F8F1F1, 0 10px 0 #252422;
     -moz-box-shadow:inset 0 1px 0 #F8F1F1, 0 10px 0 #252422;
     box-shadow:inset 0 1px 0 #F8F1F1, 0 10px 0 #252422;
 }
 
-.note-button-text:active{
+.note-button-style:active{
         top:5px;
         background-color:#E8AA42;
         -webkit-box-shadow:inset 0 1px 0 #F8F1F1, inset 0 -3px 0 #252422;
         -moz-box-shadow:inset 0 1px 0 #F8F1F1, inset 0 -3px 0 #252422;
         box-shadow:inset 0 1px 0 #F8F1F1, inset 0 -3px 0 #252422;
-    }
-
-.note-button-style:after{
-        content:"";
-        height:100%;
-        width:100%;
-        padding:4px;
-        position: absolute;
-        bottom:-14px;
-        left:-4px;
-        z-index:-1;
-        background-color:black;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-    }
-
+}
 
 .note {
     display: flex;
