@@ -1,5 +1,5 @@
 .modal-todo-background {
-    display: block;
+    display: flex;
     width: 100vw;
     height: 100vh;
     background-color: rgba(200, 200, 200, 0.75);
@@ -15,7 +15,7 @@
 .modal-todo-position {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
 }
 
 .modal-todo-container {

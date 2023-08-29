@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./ToDoList.css";
 import Todo from "./Todo";
 import TodoModal from "./TodoModal";
+import TodoContext from "../../context/TodoContext";
 
 function ToDoList() {
+    const [isTodoModalOLpen, setIsTodoModalOpen] = useState(false);
+    const { todoList } = useContext(TodoContext);
+
     return (
         <div className="todolist-container" id="todolist">
             <svg
@@ -21,13 +25,21 @@ function ToDoList() {
             <h2 className="heading-2 h2-style-todolist">To Do List</h2>
 
             <div className="todolist-button-position">
-                <button className="todolist-button todolist-button-style todolist-button-text">
+                <button
+                    className="todolist-button todolist-button-style todolist-button-text"
+                    onClick={() => setIsTodoModalOpen(true)}
+                >
                     <i className="bi bi-plus-lg"></i> New task
                 </button>
             </div>
-            <div className="todolist">
-                <Todo />
-                {/* <TodoModal /> */}
+            {isTodoModalOLpen && (
+                <TodoModal setIsTodoModalOpen={setIsTodoModalOpen} />
+            )}
+            <div className="todolist paragraph">
+                {todoList.length === 0 && "You have nothing to do"}
+                {todoList.map((todo) => {
+                    <Todo key={todo.id} id={todo.id} todo={todo} />;
+                })}
             </div>
         </div>
     );

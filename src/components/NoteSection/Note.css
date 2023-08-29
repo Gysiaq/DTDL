@@ -15,16 +15,16 @@
     margin-top: 16px;
     margin-right: 32px;
     margin-left: 32px;
-    display: inline-block;
-    word-wrap: break-all;
+    display: block;
+    word-wrap: break-word;
 }
 
 .note-description {
     margin-top: 32px;
     margin-left: 32px;
     margin-right: 32px;
-    display: inline-block;
-    word-wrap: break-all;
+    display: block;
+    word-wrap: break-word;
 }
 
 .note-buttons-section {

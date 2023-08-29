@@ -81,4 +81,8 @@
     margin-right: 24px;
     margin-top: 48px;
     margin-bottom: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F8F1F1;
 }
