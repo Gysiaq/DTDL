@@ -1,12 +1,21 @@
 import React from "react";
 import "./Weather.css";
-
+import getWeather from "./getWeather";
 import CurrentWeather from "./CurrentWeather";
 import DailyWeather from "./DailyWeather";
 
-{
-    /* <FontAwesomeIcon icon="fa-light fa-magnifying-glass" style={{ color: "#c0c5ce", }} /> */
-}
+// getWeather(50.0614, 19.9366, Intl.DateTimeFormat().resolvedOptions().timeZone)
+//     .then(renderWeather)
+//     .catch((e) => {
+//         console.error(e);
+//         alert("Error getting weather");
+//     });
+
+// function renderWeather({ current, daily, hourly }) {
+//     renderCurrentWeather(current),
+//         renderDailyWeather(daily),
+//         renderHourlyWeather(hourly);
+// }
 
 function Weather() {
     return (
@@ -37,8 +46,12 @@ function Weather() {
                 </button>
             </div>
             <div className="forcast">
-                <CurrentWeather />
-                <DailyWeather />
+                <div className="forcast-currentweather">
+                    <CurrentWeather />
+                </div>
+                <div className="forcast-dailyweather">
+                    <DailyWeather />
+                </div>
             </div>
         </div>
     );

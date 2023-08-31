@@ -78,11 +78,12 @@
 
 .todolist {
     margin-left: 24px;
-    margin-right: 24px;
+    
     margin-top: 48px;
     margin-bottom: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     color: #F8F1F1;
 }

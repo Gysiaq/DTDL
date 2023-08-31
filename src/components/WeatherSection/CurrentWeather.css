@@ -1,18 +1,18 @@
 .current-weather-container {
     width: 550px;
     margin-left: 24px;
-    margin-right: 24px;
-    background: rgb(85, 178, 209);
-    background: linear-gradient(180deg, rgba(85, 178, 209, 0.5) 0%, rgba(85, 178, 209, 0) 80%);
-    -webkit-box-shadow: -9px 9px 0px 0px rgba(2, 84, 100, 1);
-    -moz-box-shadow: -9px 9px 0px 0px rgba(2, 84, 100, 1);
-    box-shadow: -9px 9px 0px 0px rgba(2, 84, 100, 1);
+    background: #F8F1F1;
+    -webkit-box-shadow: 9px 9px 0px 0px #025464;
+    -moz-box-shadow: 9px 9px 0px 0px #025464;
+    box-shadow: 9px 9px 0px 0px #025464;
+    border: 4px solid;
+    border-color: #025464;
 }
 
 .h3-style-currentweather {
     display: flex;
     justify-content: center;
-    color: #F8F1F1;
+    color: black;
 }
 
 .h5-style-currentwather-date {
@@ -23,29 +23,70 @@
     line-height: 40px;
     font-weight: lighter;
     font-family: 'Ubuntu', sans-serif;
-    color: #F8F1F1;
+    color: black;
 }
 
 .weather-today-container {
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    margin-top: 64px;
+    margin-top: 48px;
+    color: black;
 }
 
 .bi-cloud-fill {
     font-size: 156px;
     margin-right: 38px;
+    color: #025464;
 
 }
 
 .weather-today-details {
     display: flex;
     flex-direction: column;
-    color: #F8F1F1;
+    color: #025464;
     font-weight: bold;
 }
 
 .h4-style-weather-details {
     margin-top: 14px;
 }
+.current-weather-params {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.current-weather-params-first-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.current-weather-params-second-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.current-weather-sunset-sunrise {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 48px;
+}
+
+.hourly-forecast {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.weather-details-description-span {
+    font-weight: bold;
+}
+

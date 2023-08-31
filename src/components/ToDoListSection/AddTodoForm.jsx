@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import "./AddTodoForm.css";
 import { IconButton } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
@@ -17,6 +17,7 @@ function AddTodoForm({ setIsTodoModalOpen }) {
         e.preventDefault();
         addTodo(todo);
         setIsTodoModalOpen(false);
+        setTodo("");
     };
     return (
         <form>
@@ -25,7 +26,7 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                     <h5 className="heading-5">Title</h5>
                     <input
                         className="todo-form-title-input paragraph"
-                        value={todo.title}
+                        value={todo.title || " "}
                         name="title"
                         onChange={handleChange}
                     ></input>
@@ -36,7 +37,7 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                         <input
                             type="date"
                             className="todo-form-deadline-input paragraph"
-                            value={todo.deadline}
+                            value={todo.deadline || " "}
                             name="deadline"
                             onChange={handleChange}
                         ></input>
@@ -61,7 +62,7 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                     <h5 className="heading-5">Description</h5>
                     <textarea
                         className="todo-form-description-input paragraph"
-                        value={todo.description}
+                        value={todo.description || " "}
                         name="description"
                         onChange={handleChange}
                     ></textarea>

@@ -68,3 +68,11 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+.forcast-currentweather {
+    margin-top: 12px;
+}
+
+.forcast-dailyweather {
+    margin-top: 48px;
+}

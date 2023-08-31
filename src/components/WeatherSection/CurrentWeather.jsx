@@ -17,41 +17,65 @@ function CurrentWeather() {
                 </div>
             </div>
 
-            <div>
-                <div>
+            <div className="current-weather-params">
+                <div className="current-weather-params-first-section">
                     <div>
                         {/* <icon></icon> */}
-                        <span className="paragraph">Real fell: 4 syopni C</span>
+                        <span className="paragraph weather-details-description-span">
+                            Real fell:
+                        </span>
+                        <span className="paragraph"> 4 syopni C</span>
                     </div>
 
                     <div>
                         {/* <icon></icon> */}
-                        <span className="paragraph">Real fell: 4 syopni C</span>
+                        <span className="paragraph weather-details-description-span">
+                            Real fell:
+                        </span>
+                        <span className="paragraph">4 syopni C</span>
                     </div>
                 </div>
-                <div>
-                    {/* <icon></icon> */}
-                    <span className="paragraph">Real fell: 4 syopni C</span>
-                </div>
-
-                <div>
-                    {/* <icon></icon> */}
-                    <span className="paragraph">Real fell: 4 syopni C</span>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    {/* <icon></icon> */}
-                    <span className="paragraph">Real fell: 4 syopni C</span>
-                </div>
-                <div>
-                    <span className="paragraph">Real fell: 4 syopni C</span>
+                <div className="current-weather-params-second-section">
+                    <div>
+                        {/* <icon></icon> */}
+                        <span className="paragraph weather-details-description-span">
+                            Real fell:
+                        </span>
+                        <span className="paragraph">4 syopni C</span>
+                    </div>
+                    <div>
+                        {/* <icon></icon> */}
+                        <span className="paragraph weather-details-description-span">
+                            Real fell:
+                        </span>
+                        <span className="paragraph">4 syopni C</span>
+                    </div>
                 </div>
             </div>
 
-            <h5>Hourly Forecase</h5>
-            <hr />
+            <div className="current-weather-sunset-sunrise">
+                <div>
+                    {/* <icon></icon> */}
+                    <span className="paragraph weather-details-description-span">
+                        Real fell:
+                    </span>
+                    <span className="paragraph">4 syopni C</span>
+                </div>
+                <div>
+                    <span className="paragraph weather-details-description-span">
+                        Real fell:
+                    </span>
+                    <span className="paragraph">4 syopni C</span>
+                </div>
+            </div>
+
+            <div className="hourly-forecast">
+                <h5>Hourly Forecase</h5>
+
+                <div>
+                    <hr></hr>
+                </div>
+            </div>
         </div>
     );
 }

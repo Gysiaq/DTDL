@@ -1,5 +1,8 @@
 .todo-container {
+    display: flex;
+    justify-content: center;
     margin-top: 96px;
+    margin-right: 24px;
     width: 350px;
     min-height: 300px;
     border: 4px solid;

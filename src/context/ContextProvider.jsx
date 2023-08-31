@@ -4,6 +4,7 @@ import TodoContext from "./TodoContext";
 function ContextProvider(props) {
     const [todos, setTodos] = useState([]);
     const [todo, setTodo] = useState({
+        id: "",
         title: "",
         deadline: new Date(),
         priority: false,

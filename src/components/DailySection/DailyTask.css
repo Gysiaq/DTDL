@@ -12,17 +12,20 @@
 .daiylist-callender-container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 128px;
+    margin-top: 96px;
 }
 
-/* .callender {
-    margin-left: 128px;
-} */
+.callender {
+    margin-top: 32px;
+
+}
 
 .dailylist {
     display: flex;
     flex-direction: column;
+    margin-top: 32px;
 }
 
 .dailylist-hr {
