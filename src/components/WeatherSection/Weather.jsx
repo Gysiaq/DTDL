@@ -1,42 +1,62 @@
-import React from "react";
+import React, { useReducer, useRef, useState } from "react";
 import "./Weather.css";
 import getWeather from "./getWeather";
 import CurrentWeather from "./CurrentWeather";
 import DailyWeather from "./DailyWeather";
-
-// getWeather(50.0614, 19.9366, Intl.DateTimeFormat().resolvedOptions().timeZone)
-//     .then(renderWeather)
-//     .catch((e) => {
-//         console.error(e);
-//         alert("Error getting weather");
-//     });
-
-// function renderWeather({ current, daily, hourly }) {
-//     renderCurrentWeather(current),
-//         renderDailyWeather(daily),
-//         renderHourlyWeather(hourly);
-// }
+import Search from "./Search";
 
 function Weather() {
+    const [weather, setWeather] = useState({});
+
+    //getWeather(35.6897, 139.692, Intl.DateTimeFormat().resolvedOptions().timeZone
+    //City Weather - search in input
+    const handleOnSearchChange = (searchData) => {
+        const [lat, lon] = searchData.value.split(" ");
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        getWeather(lat, lon, timezone).then(setWeather);
+    };
+
+    //City Wether - user localization
+    const getLocalization = () => {
+        const locationSuccess = ({ coords }) => {
+            getWeather(
+                coords.latitude,
+                coords.longitude,
+                Intl.DateTimeFormat().resolvedOptions().timeZone
+            )
+                .then(setWeather)
+                .catch((e) => {
+                    console.error(e);
+                    alert("Error getting weather");
+                });
+        };
+        const locationError = () => {
+            alert(
+                "There was an error getting your location. Please allow us to use your location and refresh the page"
+            );
+        };
+        navigator.geolocation.getCurrentPosition(
+            locationSuccess,
+            locationError
+        );
+    };
+
     return (
         <div className="weather-container" id="weather">
             <h2 className="heading-2 h2-style">Weather</h2>
             <div className="weather-location">
-                <div className="weather-location-input-search">
-                    <input
-                        className="weather-location-input paragraph"
-                        placeholder="Location..."
-                    ></input>
-                    <button className="weather-location-input-search-button">
-                        <i className="bi bi-search"></i>
-                    </button>
+                <div>
+                    <Search onSearchChange={handleOnSearchChange} />
                 </div>
-                <button className="weather-location-button">
+                <button
+                    className="weather-location-button"
+                    onClick={getLocalization}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="48"
                         height="48"
-                        fill="black"
+                        fill="rgba(0,0,0,0.25)"
                         className="bi bi-geo-alt"
                         viewBox="0 0 16 16"
                     >
@@ -47,10 +67,13 @@ function Weather() {
             </div>
             <div className="forcast">
                 <div className="forcast-currentweather">
-                    <CurrentWeather />
+                    <CurrentWeather
+                        data={weather?.current}
+                        dataHourly={weather?.hourly}
+                    />
                 </div>
                 <div className="forcast-dailyweather">
-                    <DailyWeather />
+                    <DailyWeather data={weather?.daily} />
                 </div>
             </div>
         </div>
