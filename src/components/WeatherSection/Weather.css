@@ -27,8 +27,9 @@
 .forcast {
     margin-top: 96px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .forcast-currentweather {

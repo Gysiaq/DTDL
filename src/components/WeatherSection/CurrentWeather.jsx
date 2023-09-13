@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./CurrentWeather.css";
 import moment from "moment";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import HourlyWeather from "./HourlyWeather";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import Carousel from "react-bootstrap/Carousel";
 
-function CurrentWeather({ data, dataHourly, cityName }) {
+// import { Carousel } from "react-responsive-carousel";
+
+function CurrentWeather({ data, dataHourly, searchCityName }) {
     const currentDate = moment().format("MM/DD/YYYY");
-
-    const formatTimeToHourlySection = (time) => {
-        return moment(time).format("h:mm A");
-    };
 
     return (
         <div className="current-weather-container">
-            <h3 className="heading-3 h3-style-currentweather">{cityName}</h3>
+            <h3 className="heading-3 h3-style-currentweather">
+                {searchCityName.city}, {searchCityName.countryCode}
+            </h3>
             <h5 className="h5-style-currentwather-date">{currentDate}</h5>
             {dataHourly?.slice(0, 1).map((firstElememt, idx) => {
                 return (
@@ -98,61 +99,51 @@ function CurrentWeather({ data, dataHourly, cityName }) {
                 </div>
             </div>
             <div className="hourly-forecast">
-                <h5 className="heading-5">Hourly Forecase</h5>
+                <h5 className="heading-5">Hourly Forecast</h5>
                 <hr className="hourly-hr"></hr>
-                <div className="hourly-forecast-position">
-                    <Carousel showThumbs={false}>
-                        {dataHourly?.slice(0, 21).map((forecast, idx) => {
-                            <div key={idx}>
-                                {dataHourly
-                                    ?.slice(0, 3)
-                                    .map((forecast, idx) => {
-                                        return (
-                                            <div
-                                                className="hourly-forecase-container"
-                                                key={idx}
-                                            >
-                                                <div className="hourly-forecase-time-section">
-                                                    {formatTimeToHourlySection(
-                                                        forecast?.timestamp
-                                                    )}
-                                                    <hr className="hourly-forecase-time-section-hr"></hr>
-                                                </div>
-                                                <div className="hourly-forecase-params">
-                                                    <div className="hourly-forecase-temp">
-                                                        <span className="hourly-forecase-temp-icon">
-                                                            {
-                                                                forecast
-                                                                    ?.iconCode
-                                                                    .icon
-                                                            }
-                                                        </span>
-                                                        <span>
-                                                            {forecast?.temp} °C
-                                                        </span>
-                                                    </div>
+                <Carousel interval={null}>
+                    <Carousel.Item>
+                        <div className="hourly-forecast-position">
+                            {dataHourly?.slice(0, 3).map((forecast, idx) => {
+                                return (
+                                    <HourlyWeather
+                                        forecast={forecast}
+                                        idx={idx}
+                                        key={idx}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </Carousel.Item>
 
-                                                    <div className="hourly-forecase-humidity">
-                                                        <i className="bi bi-droplet-fill hourly-drop-icon-position"></i>
-                                                        {
-                                                            forecast?.relativeHumidity
-                                                        }{" "}
-                                                        %
-                                                    </div>
+                    <Carousel.Item>
+                        <div className="hourly-forecast-position">
+                            {dataHourly?.slice(3, 6).map((forecast, idx) => {
+                                return (
+                                    <HourlyWeather
+                                        forecast={forecast}
+                                        idx={idx}
+                                        key={idx}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </Carousel.Item>
 
-                                                    <div className="hourly-forecase-windspeed">
-                                                        <i className="bi bi-wind hourly-wind-icon-position"></i>
-                                                        {forecast?.windSpeed}{" "}
-                                                        km/h
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                            </div>;
-                        })}
-                    </Carousel>
-                </div>
+                    <Carousel.Item>
+                        <div className="hourly-forecast-position">
+                            {dataHourly?.slice(6, 9).map((forecast, idx) => {
+                                return (
+                                    <HourlyWeather
+                                        forecast={forecast}
+                                        idx={idx}
+                                        key={idx}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </Carousel.Item>
+                </Carousel>
             </div>
         </div>
     );

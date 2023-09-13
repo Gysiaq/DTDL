@@ -3,13 +3,6 @@ import TodoContext from "./TodoContext";
 
 function ContextProvider(props) {
     const [todos, setTodos] = useState([]);
-    const [todo, setTodo] = useState({
-        id: "",
-        title: "",
-        deadline: new Date(),
-        priority: false,
-        description: "",
-    });
 
     const addTodo = (todo) => {
         setTodos((prevTodo) => [...prevTodo, todo]);
@@ -31,7 +24,6 @@ function ContextProvider(props) {
         <TodoContext.Provider
             value={{
                 todoList: todos,
-                todoObj: [todo, setTodo],
                 addTodo: addTodo,
                 deleteTodo: deleteTodo,
                 editTodo: editTodo,

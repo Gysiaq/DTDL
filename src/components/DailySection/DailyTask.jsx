@@ -15,9 +15,7 @@ function DailyTask() {
 
                 <div className="dailylist">
                     <DailyTodo />
-                    <DailyTodo />
                     <hr className="dailylist-hr"></hr>
-                    <DailyTodo />
                 </div>
             </div>
         </div>

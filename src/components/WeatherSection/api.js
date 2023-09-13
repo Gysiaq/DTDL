@@ -11,3 +11,5 @@ export const geoApiOptions = {
 };
 
 export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
+
+export const REVERSE_GEO_API_URL = "https://api-bdc.net/data/reverse-geocode";

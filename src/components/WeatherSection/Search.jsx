@@ -8,10 +8,11 @@ function Search({ onSearchChange }) {
 
     async function loadOptions(inputValue) {
         const response = await fetch(
-            `${url}?minPopulation=100&namePrefix=${inputValue}`,
+            `${url}?minPopulation=50&namePrefix=${inputValue}`,
             geoApiOptions
         );
         const result = await response.json();
+
         return {
             options: result.data.map((city) => {
                 return {

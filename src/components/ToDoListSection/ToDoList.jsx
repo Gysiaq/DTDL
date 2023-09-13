@@ -6,7 +6,7 @@ import TodoContext from "../../context/TodoContext";
 
 function ToDoList() {
     const [isTodoModalOLpen, setIsTodoModalOpen] = useState(false);
-    const { todoList, editTodo, deleteTodo } = useContext(TodoContext);
+    const { todoList } = useContext(TodoContext);
 
     return (
         <div className="todolist-container" id="todolist">
@@ -37,17 +37,10 @@ function ToDoList() {
             )}
             <div className="todolist paragraph">
                 {todoList.length === 0 && "You have nothing to do"}
-                {todoList.map((todo) => {
-                    return (
-                        <Todo
-                            key={crypto.randomUUID()}
-                            id={crypto.randomUUID()}
-                            todo={todo}
-                            handleEdit={editTodo}
-                            handleDelete={deleteTodo}
-                        />
-                    );
-                })}
+                <Todo />
+                {/* {todoList?.sort((a, b) => {
+                    return new Date(b.date) - new Date(a.date);
+                })} */}
             </div>
         </div>
     );

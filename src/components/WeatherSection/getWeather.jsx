@@ -65,7 +65,10 @@ function parseHourlyWeather({ hourly, current_weather }) {
         .map((time, index) => {
             return {
                 timestamp: time * 1000,
-                iconCode: getWeatherDescriptors(hourly.weathercode[index]),
+                iconCode: getWeatherDescriptors(
+                    hourly.weathercode[index],
+                    hourly.is_day[index]
+                ),
                 temp: Math.round(hourly.temperature_2m[index]),
                 precip: Math.round(hourly.precipitation[index] * 100) / 100,
                 surfacePressure:
@@ -77,7 +80,7 @@ function parseHourlyWeather({ hourly, current_weather }) {
                 visibility: Math.round(hourly.visibility[index]),
                 windSpeed: Math.round(hourly.windspeed_10m[index]),
                 pressureMSL: Math.round(hourly.pressure_msl[index]),
-                isDay: hourly.is_day[index],
+                isDaytime: hourly.is_day[index],
             };
         })
         .filter(({ timestamp }) => timestamp >= current_weather.time * 1000);

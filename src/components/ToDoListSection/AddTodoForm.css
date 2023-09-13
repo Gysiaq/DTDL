@@ -42,7 +42,16 @@
     align-items: center;
     flex-direction: column;
 }
-
+.white-priority-btn {
+    border: none;
+    color: black;
+    background-color: transparent;
+}
+.gold-priority-btn {
+    border: none;
+    color: goldenrod;
+    background-color: transparent;
+}
 
 .todo-form-description {
     margin-top: 24px;

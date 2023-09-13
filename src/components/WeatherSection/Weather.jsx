@@ -4,16 +4,41 @@ import getWeather from "./getWeather";
 import CurrentWeather from "./CurrentWeather";
 import DailyWeather from "./DailyWeather";
 import Search from "./Search";
+import { API_KEYS } from "../../APIKey";
 
 function Weather() {
     const [weather, setWeather] = useState({});
+    const [searchCityName, setSearchCityName] = useState("");
+    const [searchTimeZone, setSearchTimeZone] = useState("");
+    const REVERSE_GEO_API_KEY = API_KEYS.REVERSE_GEO_API_KEY;
+
+    async function cityName(lat, lon) {
+        const response = await fetch(
+            `https://api-bdc.net/data/reverse-geocode?latitude=${lat}&longitude=${lon}&key=${REVERSE_GEO_API_KEY}`
+        );
+        const result = await response.json();
+        setSearchCityName(result);
+    }
+
+    async function localTimeZone(lat, lon) {
+        const response = await fetch(
+            `https://api-bdc.net/data/timezone-by-location?latitude=${lat}&longitude=${lon}&key=${REVERSE_GEO_API_KEY}`
+        );
+        const result = await response.json();
+        setSearchTimeZone(result);
+        console.log(result);
+    }
 
     //getWeather(35.6897, 139.692, Intl.DateTimeFormat().resolvedOptions().timeZone
     //City Weather - search in input
     const handleOnSearchChange = (searchData) => {
         const [lat, lon] = searchData.value.split(" ");
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        localTimeZone(lat, lon);
+        const timezone = searchTimeZone.ianaTimeId;
         getWeather(lat, lon, timezone).then(setWeather);
+        console.log(timezone);
+        console.log(weather);
+        cityName(lat, lon);
     };
 
     //City Wether - user localization
@@ -25,11 +50,15 @@ function Weather() {
                 Intl.DateTimeFormat().resolvedOptions().timeZone
             )
                 .then(setWeather)
+                .then(cityName(coords.latitude, coords.longitude))
                 .catch((e) => {
                     console.error(e);
                     alert("Error getting weather");
                 });
+            console.log(coords.latitude);
+            console.log(coords.longitude);
         };
+
         const locationError = () => {
             alert(
                 "There was an error getting your location. Please allow us to use your location and refresh the page"
@@ -70,6 +99,7 @@ function Weather() {
                     <CurrentWeather
                         data={weather?.current}
                         dataHourly={weather?.hourly}
+                        searchCityName={searchCityName}
                     />
                 </div>
                 <div className="forcast-dailyweather">
