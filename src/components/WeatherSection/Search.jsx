@@ -33,7 +33,7 @@ function Search({ onSearchChange }) {
         <AsyncPaginate
             className="location-input paragraph"
             placeholder="Localization..."
-            debounceTimeout={500}
+            debounceTimeout={700}
             value={searchLocation}
             onChange={handleOnChange}
             loadOptions={loadOptions}

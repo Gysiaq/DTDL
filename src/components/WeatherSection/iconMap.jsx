@@ -90,3 +90,6 @@ export const getIcons = (isDaytime) => (isDaytime ? DAY_ICONS : NIGHT_ICONS);
 
 export const getWeatherDescriptors = (iconCode, isDaytime) =>
     getIcons(isDaytime)?.find((iconObj) => iconObj?.ids.includes(iconCode));
+
+export const getWeatherDailyDescription = (iconCode) =>
+    DAY_ICONS.find((iconObj) => iconObj?.ids.includes(iconCode));

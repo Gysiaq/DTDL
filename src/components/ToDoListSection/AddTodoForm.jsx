@@ -1,19 +1,19 @@
 import React, { useContext, useRef, useState } from "react";
 import "./AddTodoForm.css";
-import { IconButton } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 
 import TodoContext from "../../context/TodoContext";
 
 function AddTodoForm({ setIsTodoModalOpen }) {
-    const { addTodo } = useContext(TodoContext);
+    const { addTodo, editTodo, todoModalMode, setTodoModalMode } =
+        useContext(TodoContext);
     const titleRef = useRef(null);
     const deadlineRef = useRef(null);
     const priorityRef = useRef(null);
     const descriptionRef = useRef(null);
     const [active, setActive] = useState(false);
     const [todo, setTodo] = useState({
-        id: crypto.randomUUID(),
+        id: "",
         title: "",
         deadline: new Date(),
         priority: false,
@@ -29,15 +29,15 @@ function AddTodoForm({ setIsTodoModalOpen }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTodo({
+        (todoModalMode === "EDIT" ? editTodo : addTodo)({
             id: crypto.randomUUID(),
             title: titleRef.current.value,
             deadline: deadlineRef.current.value,
             priority: priorityRef.current.value,
             description: descriptionRef.current.value,
         });
+        setTodoModalMode("ADD");
         setIsTodoModalOpen(false);
-        setTodo("");
     };
 
     return (
@@ -92,7 +92,7 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                         type="submit"
                         className="todo-form-save-button paragraph"
                     >
-                        Add
+                        {todoModalMode === "EDIT" ? "Update" : "Add"}
                     </button>
                 </div>
             </div>

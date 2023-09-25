@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CurrentWeather.css";
 import moment from "moment";
 import HourlyWeather from "./HourlyWeather";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 
 // import { Carousel } from "react-responsive-carousel";

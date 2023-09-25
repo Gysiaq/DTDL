@@ -1,0 +1,47 @@
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 184px;   
+}
+
+.quote-image {
+    width: 650px;
+    height: 650px;
+}
+.quote-div {
+    width: 836px;
+    height: 200px;
+    margin-left: 64px;
+}
+.quote-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.quote-waves {
+    fill-opacity: 1;
+}
+
+.images-license {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #025464;
+    fill-opacity: 1;
+    padding-bottom: 12px;
+
+
+    
+}
+
+.images-license > a {
+    color: white;
+    text-decoration: none;
+    
+} 

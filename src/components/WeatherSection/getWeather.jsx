@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import { getWeatherDescriptors } from "./iconMap";
+import { getWeatherDescriptors, getWeatherDailyDescription } from "./iconMap";
 
 function getWeather(lat, lon, timezone) {
     return axios
@@ -48,7 +48,7 @@ function parseDailyWeather({ daily }) {
     return daily.time.map((time, index) => {
         return {
             timestamp: time * 1000,
-            iconCode: getWeatherDescriptors(daily.weathercode[index]),
+            iconCode: getWeatherDailyDescription(daily.weathercode[index]),
             maxTemp: Math.round(daily.temperature_2m_max[index]),
             minTemp: Math.round(daily.temperature_2m_min[index]),
             prec_sum: Math.round(daily.precipitation_sum[index]),

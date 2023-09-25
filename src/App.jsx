@@ -9,12 +9,13 @@ import Waves from "./components/MainSection/Waves";
 import WavesBottom from "./components/ToDoListSection/WavesBottom";
 import Weather from "./components/WeatherSection/Weather";
 import ContextProvider from "./context/ContextProvider";
+import Quote from "./components/EndSection/Quote";
 
 function App() {
     return (
         <div>
-            <Header />
-            <Home name="Marcelina" />
+            <Header name="Marcelina" />
+            <Home />
             <Waves />
             <Weather />
             <ContextProvider>
@@ -22,8 +23,8 @@ function App() {
                 <ToDoList />
                 <WavesBottom />
             </ContextProvider>
-
             <NotesList />
+            <Quote />
         </div>
     );
 }

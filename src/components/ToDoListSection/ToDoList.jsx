@@ -5,7 +5,7 @@ import TodoModal from "./TodoModal";
 import TodoContext from "../../context/TodoContext";
 
 function ToDoList() {
-    const [isTodoModalOLpen, setIsTodoModalOpen] = useState(false);
+    const [isTodoModalOpen, setIsTodoModalOpen] = useState(false);
     const { todoList } = useContext(TodoContext);
 
     return (
@@ -32,15 +32,18 @@ function ToDoList() {
                     <i className="bi bi-plus-lg"></i> New task
                 </button>
             </div>
-            {isTodoModalOLpen && (
+            {isTodoModalOpen && (
                 <TodoModal setIsTodoModalOpen={setIsTodoModalOpen} />
             )}
             <div className="todolist paragraph">
                 {todoList.length === 0 && "You have nothing to do"}
-                <Todo />
-                {/* {todoList?.sort((a, b) => {
-                    return new Date(b.date) - new Date(a.date);
-                })} */}
+                {todoList?.map((todo) => (
+                    <Todo
+                        setIsTodoModalOpen={setIsTodoModalOpen}
+                        todo={todo}
+                        key={todo.id}
+                    />
+                ))}
             </div>
         </div>
     );

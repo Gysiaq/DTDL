@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import "./HourlyWeather.css";
 
 function HourlyWeather({ forecast, idx }) {
     const formatTimeToHourlySection = (time) => {
@@ -9,26 +10,30 @@ function HourlyWeather({ forecast, idx }) {
     return (
         <div key={idx}>
             <div className="hourly-forecase-container">
-                <div className="hourly-forecase-time-section">
+                <div className="hourly-forecase-time-section paragraph">
                     {formatTimeToHourlySection(forecast?.timestamp)}
-                    <hr className="hourly-forecase-time-section-hr"></hr>
                 </div>
                 <div className="hourly-forecase-params">
                     <div className="hourly-forecase-temp">
                         <span className="hourly-forecase-temp-icon">
                             {forecast?.iconCode.icon}
                         </span>
-                        <span>{forecast?.temp} °C</span>
+                        <span className="paragraph">{forecast?.temp} °C</span>
                     </div>
 
                     <div className="hourly-forecase-humidity">
                         <i className="bi bi-droplet-fill hourly-drop-icon-position"></i>
-                        {forecast?.relativeHumidity} %
+                        <span className="paragraph">
+                            {forecast?.relativeHumidity} %
+                        </span>
                     </div>
 
                     <div className="hourly-forecase-windspeed">
                         <i className="bi bi-wind hourly-wind-icon-position"></i>
-                        {forecast?.windSpeed} km/h
+                        <span className="paragraph">
+                            {" "}
+                            {forecast?.windSpeed} km/h
+                        </span>
                     </div>
                 </div>
             </div>

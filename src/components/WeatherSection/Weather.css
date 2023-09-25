@@ -2,6 +2,15 @@
     margin-top: 128px;
 
 }
+.weather-main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 300px;
+   
+
+
+}
 
 .h2-style {
     display: flex;
@@ -23,11 +32,17 @@
     cursor: pointer;
 } 
 
+.weather-home-image {
+
+    height: 300px;
+    width: 300px;
+}
+
 
 .forcast {
-    margin-top: 96px;
+    margin-top: 64px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -35,13 +50,19 @@
 .forcast-currentweather {
     display: flex;
     justify-content: center;
-    margin-top: 12px;
     margin-bottom: 48px;
-    margin-right: 24px;
+    /* margin-right: 200px; */
 }
 
 .forcast-dailyweather {
     display: flex;
     justify-content: center;
-    margin-top: 12px;
+    flex-direction: column;
+    
+}
+.forcast-dailyweather-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    font-weight: 400;
 }
