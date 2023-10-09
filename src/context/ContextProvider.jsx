@@ -3,7 +3,15 @@ import TodoContext from "./TodoContext";
 
 function ContextProvider(props) {
     const [todos, setTodos] = useState([]);
-    const [todoModalMode, setTodoModalMode] = useState("ADD");
+    const [completeTodos, setCompleteTodos] = useState([]);
+    const [todoFormState, setTodoFormState] = useState({
+        title: "",
+        priority: false,
+        deadlineDate: new Date(),
+        deadlineTime: new Date(),
+        description: "",
+        complete: "",
+    });
 
     const addTodo = (todo) => {
         setTodos((prevTodo) => [...prevTodo, todo]);
@@ -21,17 +29,26 @@ function ContextProvider(props) {
         );
         setTodos(newTodoList);
         console.log(newTodo);
-        console.log(newTodoList);
     };
+
+    const isComplete = (completeTodo) => {
+        const completeTodoList = todos.filter(
+            (todo) => todo.id === completeTodo.id
+        );
+        setCompleteTodos([...completeTodoList]);
+    };
+
     return (
         <TodoContext.Provider
             value={{
                 todoList: todos,
-                todoModalMode: todoModalMode,
-                setTodoModalMode: setTodoModalMode,
-                addTodo: addTodo,
-                deleteTodo: deleteTodo,
-                editTodo: editTodo,
+                todoFormState,
+                setTodoFormState,
+                addTodo,
+                deleteTodo,
+                editTodo,
+                completeTodos,
+                isComplete,
             }}
         >
             {props.children}

@@ -1,28 +1,43 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Calendar.css";
-import dayjs from "dayjs";
-import { DemoItem } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import TodoContext from "../../context/TodoContext";
 
-function Calendar() {
-    const [dateValue, setDateValue] = useState(dayjs(Date()));
+import RevoCalendar from "revo-calendar";
+import moment from "moment";
+
+function CalendarSection(props) {
+    const { todoList } = useContext(TodoContext);
+
+    const eventList = todoList
+        .filter((todo) => todo.deadlineDate && todo.title)
+        .map((todo) =>
+            todo.deadlineTime
+                ? {
+                      name: todo.title,
+                      date: +new Date(
+                          moment(`${todo.deadlineDate} ${todo.deadlineTime}`)
+                      ),
+                      allDay: false,
+                  }
+                : {
+                      name: todo.title,
+                      date: +new Date(todo.deadlineDate),
+                      allDay: true,
+                  }
+        );
 
     return (
-        <LocalizationProvider
-            className="calendar-container"
-            dateAdapter={AdapterDayjs}
-        >
-            <DemoItem>
-                <DateCalendar
-                    value={dateValue}
-                    onChange={(newValue) => setDateValue(newValue)}
-                    views={["year", "month", "day"]}
-                />
-            </DemoItem>
-        </LocalizationProvider>
+        <RevoCalendar
+            events={eventList}
+            className="calendar"
+            primaryColor="#025464"
+            secondaryColor="white"
+            todayColor="#E57C23"
+            indicatorColor="#E57C23"
+            detailDateFormat="MM/DD/YYYY"
+            style={{ height: 670, width: 900 }}
+        />
     );
 }
 
-export default Calendar;
+export default CalendarSection;

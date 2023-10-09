@@ -37,13 +37,20 @@ function ToDoList() {
             )}
             <div className="todolist paragraph">
                 {todoList.length === 0 && "You have nothing to do"}
-                {todoList?.map((todo) => (
-                    <Todo
-                        setIsTodoModalOpen={setIsTodoModalOpen}
-                        todo={todo}
-                        key={todo.id}
-                    />
-                ))}
+                {todoList
+                    ?.sort(
+                        (a, b) =>
+                            new Date(a.deadline).getTime() -
+                            new Date(b.deadline).getTime()
+                    )
+                    .sort((a, b) => b.priority - a.priority)
+                    .map((todo) => (
+                        <Todo
+                            setIsTodoModalOpen={setIsTodoModalOpen}
+                            todo={todo}
+                            key={todo.id}
+                        />
+                    ))}
             </div>
         </div>
     );

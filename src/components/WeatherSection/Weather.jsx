@@ -26,17 +26,19 @@ function Weather() {
         );
         const result = await response.json();
         setSearchTimeZone(result);
-        console.log(result);
+        // console.log(result);
     }
 
-    //getWeather(35.6897, 139.692, Intl.DateTimeFormat().resolvedOptions().timeZone
+    // const TokyoTimezone = localTimeZone(35.6897, 139.692);
+    // const initialValue = getWeather(35.6897, 139.692, TokyoTimezone);
+    // console.log(initialValue);
     //City Weather - search in input
     const handleOnSearchChange = (searchData) => {
         const [lat, lon] = searchData.value.split(" ");
         localTimeZone(lat, lon);
         const timezone = searchTimeZone.ianaTimeId;
         getWeather(lat, lon, timezone).then(setWeather);
-        // console.log(timezone);
+        console.log(timezone);
         cityName(lat, lon);
     };
 

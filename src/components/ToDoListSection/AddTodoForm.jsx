@@ -1,42 +1,50 @@
 import React, { useContext, useRef, useState } from "react";
 import "./AddTodoForm.css";
-import StarOutlineIcon from "@mui/icons-material/StarOutline";
-
 import TodoContext from "../../context/TodoContext";
 
 function AddTodoForm({ setIsTodoModalOpen }) {
-    const { addTodo, editTodo, todoModalMode, setTodoModalMode } =
+    const { addTodo, editTodo, todoFormState, setTodoFormState } =
         useContext(TodoContext);
-    const titleRef = useRef(null);
-    const deadlineRef = useRef(null);
-    const priorityRef = useRef(null);
-    const descriptionRef = useRef(null);
-    const [active, setActive] = useState(false);
-    const [todo, setTodo] = useState({
-        id: "",
-        title: "",
-        deadline: new Date(),
-        priority: false,
-        description: "",
-    });
+    const titleRef = useRef(todoFormState.title);
+    const deadlineDateRef = useRef(todoFormState.deadlineDate);
+    const priorityRef = useRef(todoFormState.priority);
+    const descriptionRef = useRef(todoFormState.description);
+    const deadlineTimeRef = useRef(todoFormState.deadlineTime);
+    const [active, setActive] = useState(todoFormState.priority);
+
     const handleClick = () => {
         setActive(!active);
     };
 
-    const handleChange = (e) => {
-        setTodo({ ...todo, [e.target.name]: e.target.value });
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        (todoModalMode === "EDIT" ? editTodo : addTodo)({
-            id: crypto.randomUUID(),
-            title: titleRef.current.value,
-            deadline: deadlineRef.current.value,
-            priority: priorityRef.current.value,
-            description: descriptionRef.current.value,
+        todoFormState.id
+            ? editTodo({
+                  id: todoFormState.id,
+                  title: titleRef.current.value,
+                  deadlineDate: deadlineDateRef.current.value,
+                  deadlineTime: deadlineTimeRef.current.value,
+                  priority: active,
+                  description: descriptionRef.current.value,
+                  complete: todoFormState.complete,
+              })
+            : addTodo({
+                  id: crypto.randomUUID(),
+                  title: titleRef.current.value,
+                  deadlineDate: deadlineDateRef.current.value,
+                  deadlineTime: deadlineTimeRef.current.value,
+                  priority: active,
+                  description: descriptionRef.current.value,
+                  complete: todoFormState.complete,
+              });
+        setTodoFormState({
+            title: "",
+            priority: "",
+            deadlineDate: new Date(),
+            deadlineTime: new Date(),
+            description: "",
+            complete: "",
         });
-        setTodoModalMode("ADD");
         setIsTodoModalOpen(false);
     };
 
@@ -46,35 +54,43 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                 <div className="todo-form-title">
                     <h5 className="heading-5">Title</h5>
                     <input
+                        defaultValue={todoFormState.title}
                         ref={titleRef}
                         className="todo-form-title-input paragraph"
                         name="title"
-                        onChange={handleChange}
                     ></input>
                 </div>
                 <div className="todo-form-important-section">
                     <div className="todo-form-deadline">
                         <h5 className=" heading-5">Deadline</h5>
                         <input
-                            ref={deadlineRef}
+                            defaultValue={todoFormState.deadlineDate}
+                            ref={deadlineDateRef}
                             type="date"
                             className="todo-form-deadline-input paragraph"
-                            name="deadline"
-                            onChange={handleChange}
+                            name="deadlineDate"
+                        ></input>
+                        <input
+                            defaultValue={todoFormState.deadlineTime}
+                            ref={deadlineTimeRef}
+                            className="todo-form-deadline-input paragraph"
+                            type="time"
+                            name="deadlineTime"
                         ></input>
                     </div>
                     <div className="todo-form-priority">
                         <h5 className=" heading-5">Priority</h5>
                         <button
+                            className="priority-button"
+                            type="button"
+                            value={active}
                             ref={priorityRef}
                             onClick={handleClick}
-                            className={
-                                active
-                                    ? "gold-priority-btn"
-                                    : "white-priority-btn"
-                            }
+                            style={{
+                                backgroundColor: active ? "gold" : "white",
+                            }}
                         >
-                            <StarOutlineIcon fontSize="medium"></StarOutlineIcon>
+                            <i className="bi bi-star"></i>
                         </button>
                     </div>
                 </div>
@@ -82,9 +98,9 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                     <h5 className="heading-5">Description</h5>
                     <textarea
                         ref={descriptionRef}
+                        defaultValue={todoFormState.description}
                         className="todo-form-description-input paragraph"
                         name="description"
-                        onChange={handleChange}
                     ></textarea>
                 </div>
                 <div className="todo-form-save-button-position">
@@ -92,7 +108,7 @@ function AddTodoForm({ setIsTodoModalOpen }) {
                         type="submit"
                         className="todo-form-save-button paragraph"
                     >
-                        {todoModalMode === "EDIT" ? "Update" : "Add"}
+                        {todoFormState.id ? "Update" : "Add"}
                     </button>
                 </div>
             </div>

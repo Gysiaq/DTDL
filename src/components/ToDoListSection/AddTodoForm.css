@@ -42,17 +42,6 @@
     align-items: center;
     flex-direction: column;
 }
-.white-priority-btn {
-    border: none;
-    color: black;
-    background-color: transparent;
-}
-.gold-priority-btn {
-    border: none;
-    color: goldenrod;
-    background-color: transparent;
-}
-
 .todo-form-description {
     margin-top: 24px;
     margin-bottom: 5px;
@@ -97,4 +86,33 @@
     border-color: black;
     background-color: #025464;
     color: #F8F1F1;
+}
+
+.bi-star {
+    font-size: 32px;
+}
+
+/* .gold-btn {
+    border: none;
+    background-color: transparent;
+    color: goldenrod;
+}
+
+.default-btn {
+    border: none;
+    background-color: transparent;
+    border-radius: 90px;
+    background-color: #025464;
+} */
+
+.priority-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    border-radius: 90px;
+    width: 42px;
+    height: 42px;
+    
 }
