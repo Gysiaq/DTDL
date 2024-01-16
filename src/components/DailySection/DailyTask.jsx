@@ -6,13 +6,20 @@ import TodoContext from "../../context/TodoContext";
 import moment from "moment";
 
 function DailyTask() {
-    const { todoList, completeTodos } = useContext(TodoContext);
-    const today = moment().format("YYYY-MM-DD");
+    const { todoList } = useContext(TodoContext);
 
-    const dailyTodos = todoList.filter((todo) => todo.deadlineDate === today);
-    const dailyCompleteTodos = completeTodos.filter(
-        (todo) => todo.deadlineDate === today
+    const dailyTodos = todoList.filter(
+        (todo) =>
+            todo.deadlineDate === moment().format("YYYY-MM-DD") &&
+            !todo.complete
     );
+    const dailyCompleteTodos = todoList.filter(
+        (todo) =>
+            todo.deadlineDate === moment().format("YYYY-MM-DD") && todo.complete
+    );
+
+    console.log(dailyTodos);
+    console.log(dailyCompleteTodos);
 
     return (
         <div className="daily-container" id="dailytask">
@@ -20,48 +27,33 @@ function DailyTask() {
 
             <div className="daiylist-callender-container">
                 <div className="callender">
+                    <h4 className="heading-4">Calendar</h4>
                     <CalendarSection />
                 </div>
 
                 <div>
                     <div className="dailylist paragraph">
-                        {dailyTodos.length ? (
-                            dailyTodos?.map((todo) => (
-                                <div>
-                                    <DailyTodo todo={todo} key={todo.id} />
-                                </div>
-                            ))
-                        ) : (
-                            <div className="dailylist-none-daily">
-                                <h4 className="heading-4">
-                                    Today relax and have fun!
-                                </h4>
-                                <img src="src\images\MindfulnessPana.svg"></img>
+                        {dailyTodos?.map((todo) => (
+                            <DailyTodo todo={todo} key={todo.id} />
+                        ))}
+                        <hr className="dailylist-hr"></hr>
+
+                        {dailyCompleteTodos?.map((todo) => (
+                            <div>
+                                <DailyTodo todo={todo} key={todo.id} />
                             </div>
-                        )}
-                        {dailyTodos.length ? (
-                            <div className="dailylist paragraph">
-                                {dailyCompleteTodos.length ? (
-                                    dailyCompleteTodos?.map((todo) => (
-                                        <div>
-                                            <hr className="dailylist-hr"></hr>
-                                            <DailyTodo
-                                                todo={todo}
-                                                key={todo.id}
-                                            />
-                                        </div>
-                                    ))
-                                ) : (
-                                    <div className="dailylist-none-daily">
-                                        <hr className="dailylist-hr"></hr>
-                                        <span>Nothing has complete</span>
-                                    </div>
-                                )}
-                            </div>
-                        ) : (
-                            <div></div>
-                        )}
+                        ))}
                     </div>
+
+                    <div></div>
+
+                    {/* <div className="dailylist-none-daily">
+                            <h4 className="heading-4">
+                                Today relax and have fun!
+                            </h4>
+                            <img src="src\images\MindfulnessPana.svg"></img>
+                        </div>
+                    )} */}
                 </div>
             </div>
         </div>

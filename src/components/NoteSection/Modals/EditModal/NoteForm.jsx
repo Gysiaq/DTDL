@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-import "./AddNoteForm.css";
+import "./NoteForm.css";
 
-function AddNoteForm({ save }) {
-    const [note, setNote] = useState({
-        title: "",
-        description: "",
-        id: crypto.randomUUID(),
-    });
+function NoteForm({ save, note, setIsModalOpen }) {
+    const [newNote, setNewNote] = useState(
+        note
+            ? note // we are editing
+            : {
+                  title: "",
+                  description: "",
+                  id: crypto.randomUUID(),
+              } // we are adding a new note
+    );
 
     const handleChange = (e) => {
-        setNote({ ...note, [e.target.name]: e.target.value });
+        setNewNote({ ...newNote, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        save(note);
+        save(newNote);
+        setIsModalOpen(false);
     };
 
     return (
@@ -24,7 +29,7 @@ function AddNoteForm({ save }) {
                 <input
                     className="note-form-title-input paragraph"
                     placeholder=" title"
-                    value={note.title}
+                    value={newNote.title}
                     onChange={handleChange}
                     name="title"
                 ></input>
@@ -33,8 +38,8 @@ function AddNoteForm({ save }) {
                 <h5 className="heading-5 note-form-description">Description</h5>
                 <textarea
                     className="note-form-description-input paragraph"
-                    placeholder=" desscription"
-                    value={note.description}
+                    placeholder="description"
+                    value={newNote.description}
                     onChange={handleChange}
                     name="description"
                 ></textarea>
@@ -45,11 +50,11 @@ function AddNoteForm({ save }) {
                     type="submit"
                     onClick={handleSubmit}
                 >
-                    Add
+                    {!note ? "Add" : "Update"}
                 </button>
             </div>
         </form>
     );
 }
 
-export default AddNoteForm;
+export default NoteForm;

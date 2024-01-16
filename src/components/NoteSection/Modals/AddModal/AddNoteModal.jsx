@@ -1,6 +1,6 @@
 import React from "react";
-import AddNoteForm from "./AddNoteForm";
 import "./AddNoteModal.css";
+import NoteForm from "../EditModal/NoteForm";
 
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -19,7 +19,10 @@ function AddNoteModal({ setIsModalOpen, handleSave }) {
                     </button>
                 </div>
                 <div className="modal-form-section">
-                    <AddNoteForm save={handleSave} />
+                    <NoteForm
+                        save={handleSave}
+                        setIsModalOpen={setIsModalOpen}
+                    />
                 </div>
             </div>
         </div>

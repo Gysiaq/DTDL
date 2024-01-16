@@ -38,7 +38,7 @@ function Note({ id, note, deleteNote, editNote }) {
             </div>
             {isEditModalOpen && (
                 <EditNoteModal
-                    setIsEditModalOpen={setIsEditModalOpen}
+                    setIsModalOpen={setIsEditModalOpen}
                     note={note}
                     editNote={editNote}
                 />

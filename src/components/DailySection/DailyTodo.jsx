@@ -1,27 +1,40 @@
 import React, { useContext } from "react";
 import TodoContext from "../../context/TodoContext";
-
 import "./DailyTodo.css";
 
-function DailyTodo({ todo, id }) {
-    const { isComplete } = useContext(TodoContext);
+function DailyTodo({ todo }) {
+    const { setTodos } = useContext(TodoContext);
 
-    const markAsComplete = (e) => {
+    const handleToggleComplete = (e) => {
         e.preventDefault();
-        isComplete(todo);
-    };
 
-    const markAsIncomplete = (e) => {
-        e.preventDefault();
+        setTodos((todoList) =>
+            todoList.map((todooo) => {
+                if (todooo.id === todo.id) {
+                    return {
+                        ...todooo,
+                        complete: !todooo.complete,
+                    };
+                } else {
+                    return todooo;
+                }
+            })
+        );
     };
 
     return (
-        <div className="daily-todo-container" key={id}>
+        <div
+            className={
+                todo.complete
+                    ? "daily-complete-todo-container"
+                    : "daily-todo-container"
+            }
+        >
             <input
                 className="daily-todo-checkbox"
                 type="checkbox"
-                // checked={todo.complete}
-                onChange={!todo.complete ? markAsComplete : markAsIncomplete}
+                checked={todo.complete}
+                onChange={handleToggleComplete}
             ></input>
             <span className="daily-todo-title heading-6">{todo?.title}</span>
             <span className="daily-todo-description paragraph">

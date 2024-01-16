@@ -15,6 +15,7 @@ function Todo({ setIsTodoModalOpen, todo }) {
         );
     };
 
+    // jeśli mam mieć czas to musi być data
     return (
         <div
             className={
@@ -24,17 +25,17 @@ function Todo({ setIsTodoModalOpen, todo }) {
             }
         >
             <span className="todo-title heading-6">{todo?.title}</span>
-
-            <div
-                className={
-                    todo.priority
-                        ? "todo-deadline-with-priority paragraph"
-                        : "todo-deadline paragraph"
-                }
-            >
-                <span>{moment(todo?.deadlineDate).format("L")}</span>
-                <span>{todo?.deadlineTime}</span>
-                {/* <span>
+            {todo.deadlineDate?.length || todo.deadlineTime?.length ? (
+                <div
+                    className={
+                        todo.priority
+                            ? "todo-deadline-with-priority paragraph"
+                            : "todo-deadline paragraph"
+                    }
+                >
+                    <span>{moment(todo?.deadlineDate).format("L")}</span>
+                    <span>{todo?.deadlineTime}</span>
+                    {/* <span>
                     {todo?.deadline === NaN ? (
                         " "
                     ) : (
@@ -44,8 +45,8 @@ function Todo({ setIsTodoModalOpen, todo }) {
                         </span>
                     )}
                 </span> */}
-            </div>
-
+                </div>
+            ) : undefined}
             <span className="todo-description parahraph">
                 {todo?.description}
             </span>

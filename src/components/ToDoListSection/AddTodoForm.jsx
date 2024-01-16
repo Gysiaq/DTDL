@@ -18,34 +18,38 @@ function AddTodoForm({ setIsTodoModalOpen }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        todoFormState.id
-            ? editTodo({
-                  id: todoFormState.id,
-                  title: titleRef.current.value,
-                  deadlineDate: deadlineDateRef.current.value,
-                  deadlineTime: deadlineTimeRef.current.value,
-                  priority: active,
-                  description: descriptionRef.current.value,
-                  complete: todoFormState.complete,
-              })
-            : addTodo({
-                  id: crypto.randomUUID(),
-                  title: titleRef.current.value,
-                  deadlineDate: deadlineDateRef.current.value,
-                  deadlineTime: deadlineTimeRef.current.value,
-                  priority: active,
-                  description: descriptionRef.current.value,
-                  complete: todoFormState.complete,
-              });
-        setTodoFormState({
-            title: "",
-            priority: "",
-            deadlineDate: new Date(),
-            deadlineTime: new Date(),
-            description: "",
-            complete: "",
-        });
-        setIsTodoModalOpen(false);
+
+        if (titleRef.current.value) {
+            todoFormState.id
+                ? editTodo({
+                      id: todoFormState.id,
+                      title: titleRef.current.value,
+                      deadlineDate: deadlineDateRef.current.value,
+                      deadlineTime: deadlineTimeRef.current.value,
+                      priority: active,
+                      description: descriptionRef.current.value,
+                      complete: todoFormState.complete,
+                  })
+                : addTodo({
+                      id: crypto.randomUUID(),
+                      title: titleRef.current.value,
+                      deadlineDate: deadlineDateRef.current.value,
+                      deadlineTime: deadlineTimeRef.current.value,
+                      priority: active,
+                      description: descriptionRef.current.value,
+                      complete: todoFormState.complete,
+                  });
+            setTodoFormState({
+                id: "",
+                title: "",
+                priority: false,
+                deadlineDate: new Date(),
+                deadlineTime: new Date(),
+                description: "",
+                complete: false,
+            });
+            setIsTodoModalOpen(false);
+        }
     };
 
     return (

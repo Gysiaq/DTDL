@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import TodoContext from "./TodoContext";
+import moment from "moment";
 
 function ContextProvider(props) {
     const [todos, setTodos] = useState([]);
-    const [completeTodos, setCompleteTodos] = useState([]);
     const [todoFormState, setTodoFormState] = useState({
+        id: "",
         title: "",
         priority: false,
         deadlineDate: new Date(),
         deadlineTime: new Date(),
         description: "",
-        complete: "",
+        complete: false,
     });
 
     const addTodo = (todo) => {
@@ -31,24 +32,16 @@ function ContextProvider(props) {
         console.log(newTodo);
     };
 
-    const isComplete = (completeTodo) => {
-        const completeTodoList = todos.filter(
-            (todo) => todo.id === completeTodo.id
-        );
-        setCompleteTodos([...completeTodoList]);
-    };
-
     return (
         <TodoContext.Provider
             value={{
                 todoList: todos,
+                setTodos,
                 todoFormState,
                 setTodoFormState,
                 addTodo,
                 deleteTodo,
                 editTodo,
-                completeTodos,
-                isComplete,
             }}
         >
             {props.children}

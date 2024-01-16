@@ -1,0 +1,95 @@
+.signin-container {
+    display: flex;
+    
+    
+}
+
+.signin-left{
+    flex: 40%;
+    height: 100vh;
+    background-color: #025464;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-image-logo {
+    display: flex;
+    width: 579px;
+    justify-content: center;
+    /* align-items: flex-start; */
+    gap: 8px;
+    margin-top: 48px;
+    
+}
+
+.sign-in-image {
+    height: 650px;
+    width: 650px;
+    margin-top: 6px;
+    margin-bottom: 42px;
+}
+
+.motiv-text {
+    color: #E8AA42;
+}
+
+.signin-right {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+    flex-direction: column;
+    
+
+}
+
+.login-text{
+    display: flex;
+    justify-content: center;
+
+}
+
+/* .login-text-div {
+   
+    float:left;
+    height: 88px;
+    width:100vw;
+    background-color: black; 
+} */
+
+.login-text-h2 {
+    
+    float:left; 
+   clear: left;
+    width: 300px;
+    height: 104px;
+    background-color: #E8AA42;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -44px;
+    margin-bottom: 64px;
+
+}
+
+
+.elipse310 {
+    position: relative;
+    height: 250px;
+    width: 310px;
+    bottom: -71.6%;
+    right: -35.2%;
+}
+
+.elipse150-1 {
+    position: relative;
+    width: 9.5%;
+    height: 10%;
+    bottom: -75%;
+    left: -25%;
+}
+

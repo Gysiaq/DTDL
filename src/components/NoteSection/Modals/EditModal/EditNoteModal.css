@@ -12,13 +12,14 @@
     bottom: 0;
 
 }
-.modal-edit-position {
+
+.modal-background {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.modal-edit-container {
+.modal-container {
     width: 600px;
     height: 650px;
     background-color: white;
@@ -28,14 +29,14 @@
     padding: 25px;
 }
 
-.modal-edit-close-button-position {
+.modal-close-button-container {
     display: flex;
     justify-content: flex-end;
     margin-top: 5px;
     margin-right: 5px;
 } 
 
-.modal-edit-close-button-style {
+.modal-close-button {
     width: 40px;
     color: black;
     font-weight: bold;
@@ -45,7 +46,7 @@
     cursor: pointer;
 }
 
-.modal-edit-form-section {
+.modal-form-section {
     margin-top: 5px;
     margin-bottom: 5px;
 }

@@ -1,27 +1,27 @@
 import React from "react";
-import EditNoteForm from "./EditNoteForm";
+import NoteForm from "./NoteForm";
 import "./EditNoteModal.css";
 import CloseIcon from "@mui/icons-material/Close";
 
-function EditNoteModal({ setIsEditModalOpen, note, editNote }) {
+function EditNoteModal({ setIsModalOpen, note, editNote }) {
     return (
-        <div className="modal-edit-background modal-edit-position">
-            <div className="modal-edit-container">
-                <div className="modal-edit-close-button-position">
+        <div className="modal-background">
+            <div className="modal-container">
+                <div className="modal-close-button-container">
                     <button
-                        className=" modal-edit-close-button-style"
+                        className="modal-close-button"
                         onClick={() => {
-                            setIsEditModalOpen(false);
+                            setIsModalOpen(false);
                         }}
                     >
                         <CloseIcon />
                     </button>
                 </div>
-                <div className="modal-edit-form-section">
-                    <EditNoteForm
+                <div className="modal-form-section">
+                    <NoteForm
                         note={note}
-                        editNote={editNote}
-                        setIsEditModalOpen={setIsEditModalOpen}
+                        save={editNote}
+                        setIsModalOpen={setIsModalOpen}
                     />
                 </div>
             </div>

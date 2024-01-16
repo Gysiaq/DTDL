@@ -1,30 +1,29 @@
+import React from "react";
 import "./App.css";
-
-import DailyTask from "./components/DailySection/DailyTask";
-import Header from "./components/MainSection/Header";
-import Home from "./components/MainSection/Home";
-import NotesList from "./components/NoteSection/NotesList";
-import ToDoList from "./components/ToDoListSection/ToDoList";
-import Waves from "./components/MainSection/Waves";
-import WavesBottom from "./components/ToDoListSection/WavesBottom";
-import Weather from "./components/WeatherSection/Weather";
-import ContextProvider from "./context/ContextProvider";
-import Quote from "./components/EndSection/Quote";
+import SignIn from "./components/LoginPage/SignIn";
+import { Route, Routes } from "react-router-dom";
+import SignUp from "./components/LoginPage/SignUp";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./components/Home";
 
 function App() {
     return (
         <div>
-            <Header name="Marcelina" />
-            <Home />
-            <Waves />
-            <Weather />
-            <ContextProvider>
-                <DailyTask />
-                <ToDoList />
-                <WavesBottom />
-            </ContextProvider>
-            <NotesList />
-            <Quote />
+            <UserAuthContextProvider>
+                <Routes>
+                    <Route
+                        path="/home"
+                        element={
+                            <ProtectedRoute>
+                                <Home />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route path="/" element={<SignIn />} />
+                    <Route path="/signup" element={<SignUp />} />
+                </Routes>
+            </UserAuthContextProvider>
         </div>
     );
 }

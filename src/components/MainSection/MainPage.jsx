@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-scroll";
 
-function Home() {
+function MainPage() {
     return (
         <div className="home-main">
             <div className="home-welcom-nav">
@@ -108,4 +108,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default MainPage;

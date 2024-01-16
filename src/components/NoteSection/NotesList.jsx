@@ -10,7 +10,6 @@ function NotesList() {
     const addNote = (note) => {
         setNoteList((oldList) => [...oldList, note]);
         console.log(note);
-        setIsModalOpen(false);
     };
 
     const deleteNote = (id) => {
