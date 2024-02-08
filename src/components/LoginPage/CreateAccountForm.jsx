@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useUserAuth } from "../../context/UserAuthContext";
 import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import "./CreateAccountForm.css";
 
 function CreateAccountForm() {
     const {
@@ -17,8 +18,8 @@ function CreateAccountForm() {
         },
     });
 
-    // const [name, setName] = useState("");
-    // const [surname, setSurname] = useState("");
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -38,27 +39,31 @@ function CreateAccountForm() {
     };
 
     return (
-        <form onSubmit={handleSubmitsignUp}>
+        <form onSubmit={handleSubmitsignUp} className="form-signup-container">
             {error && <Alert variant="danger">{error}</Alert>}
-            {/* <input
-                {...register("name", {
-                    required: { value: true, message: "This is required!" },
-                })}
-                placeholder="name..."
-                onChange={(e) => {
-                    setName(e.target.value);
-                }}
-            />
+            <div className="name-surename-components">
+                <input
+                    {...register("name", {
+                        required: { value: true, message: "This is required!" },
+                    })}
+                    placeholder="Name"
+                    onChange={(e) => {
+                        setName(e.target.value);
+                    }}
+                    className="name-imput"
+                />
 
-            <input
-                {...register("surname", {
-                    required: { value: true, message: "This is required!" },
-                })}
-                placeholder="surname..."
-                onChange={(e) => {
-                    setSurname(e.target.value);
-                }}
-            /> */}
+                <input
+                    {...register("surname", {
+                        required: { value: true, message: "This is required!" },
+                    })}
+                    placeholder="Surname"
+                    onChange={(e) => {
+                        setSurname(e.target.value);
+                    }}
+                    className="surename-input"
+                />
+            </div>
 
             <input
                 {...register("email", {
@@ -68,10 +73,11 @@ function CreateAccountForm() {
                     //     message: "Incorrect email",
                     // },
                 })}
-                placeholder="email"
+                placeholder="Email"
                 onChange={(e) => {
                     setEmail(e.target.value);
                 }}
+                className="email-input-create-account"
             />
 
             <input
@@ -84,9 +90,14 @@ function CreateAccountForm() {
                 onChange={(e) => {
                     setPassword(e.target.value);
                 }}
+                className="password-input-create-account"
             />
 
-            <input type="submit" value="Sign UP" />
+            <input
+                type="submit"
+                value="Sign Up"
+                className="input-submit-signup heading-6"
+            />
         </form>
     );
 }

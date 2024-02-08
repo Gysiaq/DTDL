@@ -50,7 +50,9 @@ function LoginForm() {
         <form onSubmit={handleSubmit} className="loginform-container">
             {error && <Alert variant="danger">{error}</Alert>}
             <div>
-                <p className="paragraph paragraph-email">E-mail</p>
+                <p className="paragraph paragraph-email">
+                    {<i className="bi bi-person"></i>} E-mail
+                </p>
                 <input
                     {...register("email", {
                         required: { value: true, message: "This is required!" },
@@ -59,9 +61,7 @@ function LoginForm() {
                             message: "Incorrect email",
                         },
                     })}
-                    placeholder={
-                        <i class="bi bi-person"></i> + "Enter your email"
-                    }
+                    placeholder={"Enter your email"}
                     className="input-email-login paragraph"
                     onChange={(e) => {
                         setEmail(e.target.value);
@@ -73,13 +73,15 @@ function LoginForm() {
             </div>
 
             <div>
-                <p className="paragraph paragraph-password">Password</p>
+                <p className="paragraph paragraph-password">
+                    {<i class="bi bi-lock"></i>} Password
+                </p>
                 <input
                     {...register("password", {
                         required: { value: true, message: "This is required!" },
                         minLength: { value: 8, message: "Min length is 8" },
                     })}
-                    placeholder="Password"
+                    placeholder="Enter your password"
                     className="input-password-login paragraph"
                     type="password"
                     onChange={(e) => {
@@ -91,14 +93,14 @@ function LoginForm() {
                 </p>
             </div>
 
-            {/* <div className="buttom-forgot-password-container">
+            <div className="buttom-forgot-password-container">
                 <button
                     type="button"
                     className="paragraph button-forgot-password"
                 >
                     Forgot password?
                 </button>
-            </div> */}
+            </div>
 
             <input
                 type="submit"

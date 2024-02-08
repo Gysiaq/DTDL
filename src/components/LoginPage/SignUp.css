@@ -1,45 +1,51 @@
-.signin-container {
+.signup-container {
     display: flex;
     overflow: hidden;
-    background-image: url("src/images/sign_in_background.png");
-   
-    
-    
+    background-image: url("src/images/sign_up_background_vol2.png");
 }
 
-.signin-left{
+.signup-right{
     flex: 40%;
     height: 100vh;
     background-color: #025464;
-    flex-shrink: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.sign-in-image-logo {
+.sign-up-image-logo {
     display: flex;
     width: 579px;
     justify-content: center;
-    /* align-items: flex-start; */
     gap: 8px;
     margin-top: 48px;
     
 }
 
-.sign-in-image {
+.sign-up-image {
     height: 650px;
-    width: 650px;
+    width: 600px;
     margin-top: 6px;
-    margin-bottom: 42px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .motiv-text {
     color: #E8AA42;
+    display: flex;
+    justify-content: center;
 }
 
-.signin-right {
+
+.waves-singup{
+    rotate: 180deg;
+}
+
+
+.signup-left {
     flex: 50%;
     display: flex;
     justify-content: center;
@@ -49,21 +55,22 @@
 
 }
 
-.login-text{
+
+
+.signup-text{
     display: flex;
     justify-content: center;
 
 }
 
-.login-text-div {
+.signup-text-div {
    position: relative;
-    float:left;
     height: 88px;
     width: 800px;
     border: 4px dashed  black ;
     background: rgb(229,124,35);
     background: linear-gradient(135deg, rgba(229,124,35,1) 0%, rgba(230,143,48,1) 12%, rgba(231,156,56,1) 25%, rgba(232,170,66,1) 41%, rgba(236,185,99,1) 56%, rgba(239,196,125,1) 72%, rgba(244,217,171,1) 86%, rgba(242,226,199,1) 100%);
-    margin-top: -44px;
+    margin-top: 44px;
     margin-bottom: 64px;
     display: flex;
     justify-content: center;
@@ -71,10 +78,8 @@
      
 }
 
-.login-text-h2 {
-    
-
-    width: 300px;
+.signup-text-h2 {
+    width: 550px;
     height: 104px;
     background-color: white;
     border: 4px dashed  black;
@@ -94,3 +99,12 @@
 
 
 
+.create-account-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-sign-up {
+    margin-top: 64px;
+}

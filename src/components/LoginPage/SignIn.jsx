@@ -38,14 +38,14 @@ function SignIn() {
 
             <div className="signin-right">
                 <div className="login-text">
-                    <div>
+                    <div className="login-text-div">
                         <div className="heading-2 login-text-h2">Login</div>
                     </div>
                 </div>
                 {/* <img src="src\images\Ellipse310.png" className="elipse310" /> */}
                 {/* <img src="src\images\Ellipse150.png" className="elipse150-1" /> */}
                 <LoginForm />
-                <div>
+                <div className="question-sign-up">
                     <p className="paragraph sing-in-question">
                         You doesn't have account yet?
                     </p>
