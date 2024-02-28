@@ -18,7 +18,10 @@ function Header() {
     };
     return (
         <div className="header-main">
-            <img src="src\images\LOGO.png" className="header-image" />
+            <img
+                src={require("../../images/LOGO.png")}
+                className="header-image"
+            />
             <div>
                 <span className="header-user paragraph">
                     Hello, {user.displayName.split(" ")[0]}

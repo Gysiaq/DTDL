@@ -7,7 +7,7 @@ function Quote() {
             <div className="quote-container">
                 <img
                     className="quote-image"
-                    src="src/images/MindMapCuate.svg"
+                    src={require("../../images/Mind map-cuate.png")}
                 ></img>
                 <div className="quote-div">
                     <h3 className="heading-3 quote-style">

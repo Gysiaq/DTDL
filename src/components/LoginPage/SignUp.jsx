@@ -47,11 +47,11 @@ function SignUp() {
             <div className="signup-right">
                 <div>
                     <img
-                        src="src\images\LOGO_XXL.png"
+                        src={require("../../images/LOGO_XXL.png")}
                         className="sign-up-image-logo"
                     />
                     <img
-                        src="src\images\Mobile login-pana.png"
+                        src={require("../../images/Mobile_login-pana.png")}
                         className="sign-up-image"
                     />
                     <h3 className="heading-4 motiv-text">

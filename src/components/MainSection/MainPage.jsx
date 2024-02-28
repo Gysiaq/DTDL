@@ -102,7 +102,7 @@ function MainPage() {
 
             <img
                 className="home-image"
-                src="src/images/Checklist-pana.svg"
+                src={require("../../images/Checklist-pana.png")}
             ></img>
         </div>
     );

@@ -8,11 +8,11 @@ function SignIn() {
         <div className="signin-container">
             <div className="signin-left">
                 <img
-                    src="src\images\LOGO_XXL.png"
+                    src={require("../../images/LOGO_XXL.png")}
                     className="sign-in-image-logo"
                 />
                 <img
-                    src="src\images\Creative thinking-pana.png"
+                    src={require("../../images/Creative_thinking-pana.png")}
                     className="sign-in-image"
                 />
                 <h3 className="heading-4 motiv-text">

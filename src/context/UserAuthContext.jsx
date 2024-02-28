@@ -31,7 +31,7 @@ export function UserAuthContextProvider({ children }) {
 
     const googleSignIn = () => {
         const googleAuthProvider = new GoogleAuthProvider();
-        updateProfile();
+
         return signInWithPopup(auth, googleAuthProvider);
     };
 

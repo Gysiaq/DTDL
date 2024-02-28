@@ -101,7 +101,7 @@ function Weather() {
 
                 <img
                     className="weather-home-image"
-                    src="src/images/YoungAndHappyRafiki.svg"
+                    src={require("../../images/Young and happy-rafiki.png")}
                 ></img>
             </div>
             <div className="forcast">

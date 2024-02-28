@@ -1,7 +1,7 @@
 .signup-container {
     display: flex;
     overflow: hidden;
-    background-image: url("src/images/sign_up_background_vol2.png");
+    background-image: url("../../images/sign_up_background_vol2.png");
 }
 
 .signup-right{
