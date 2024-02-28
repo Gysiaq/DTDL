@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import SignUp from "./components/LoginPage/SignUp";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from "./components/ToDoListSection/Home.jsx";
+import Home from "./components/Home.jsx";
 
 function App() {
     return (
