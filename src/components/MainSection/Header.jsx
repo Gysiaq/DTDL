@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
-import { useUserAuth } from "../../context/UserAuthContext";
+import { UserAuthContext, useUserAuth } from "../../context/UserAuthContext";
 import { useNavigate } from "react-router-dom";
 
-function Header({ name }) {
+function Header() {
+    const { user } = useContext(UserAuthContext);
     const { logOut } = useUserAuth();
     const navigate = useNavigate();
 
@@ -19,7 +20,9 @@ function Header({ name }) {
         <div className="header-main">
             <img src="src\images\LOGO.png" className="header-image" />
             <div>
-                <span className="header-user paragraph">Hello, {name}</span>
+                <span className="header-user paragraph">
+                    Hello, {user.displayName}
+                </span>
                 <button
                     onClick={handleLogOut}
                     className="header-button heading-6"

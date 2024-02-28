@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoContext from "./TodoContext";
-import moment from "moment";
+import { db } from "../components/LoginPage/firebase";
+import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 
 function ContextProvider(props) {
     const [todos, setTodos] = useState([]);
@@ -14,9 +15,18 @@ function ContextProvider(props) {
         complete: false,
     });
 
-    const addTodo = (todo) => {
+    const addTodo = async (todo) => {
         setTodos((prevTodo) => [...prevTodo, todo]);
-        console.log(todo);
+        try {
+            const docRef = await addDoc(collection((db, "todo"), todo));
+            const querySnapshot = await addDoc(doc(collection(db, "todo")));
+            querySnapshot.forEach((doc) => {
+                console.log(`${doc.id} => ${doc.data()}`);
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
     };
 
     const deleteTodo = (id) => {
@@ -29,7 +39,6 @@ function ContextProvider(props) {
             todo.id === newTodo.id ? newTodo : todo
         );
         setTodos(newTodoList);
-        console.log(newTodo);
     };
 
     return (

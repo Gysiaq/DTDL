@@ -17,7 +17,7 @@ function Home() {
     console.log("User:", user);
     return (
         <div>
-            <Header name="..." />
+            <Header />
             <MainPage />
             <Waves />
             <Weather />

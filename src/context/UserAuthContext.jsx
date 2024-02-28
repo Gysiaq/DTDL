@@ -7,14 +7,15 @@ import {
     onAuthStateChanged,
     GoogleAuthProvider,
     signInWithPopup,
+    updateProfile,
 } from "firebase/auth";
 
 import { auth } from "../components/LoginPage/firebase";
 
-const UserAuthContext = createContext();
+export const UserAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState(null);
     const signUp = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     };
@@ -30,6 +31,7 @@ export function UserAuthContextProvider({ children }) {
 
     const googleSignIn = () => {
         const googleAuthProvider = new GoogleAuthProvider();
+        updateProfile();
         return signInWithPopup(auth, googleAuthProvider);
     };
 

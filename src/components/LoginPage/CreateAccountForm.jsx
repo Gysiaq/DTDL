@@ -4,6 +4,8 @@ import { useUserAuth } from "../../context/UserAuthContext";
 import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./CreateAccountForm.css";
+import { updateProfile } from "firebase/auth";
+import Header from "../MainSection/Header";
 
 function CreateAccountForm() {
     const {
@@ -18,20 +20,18 @@ function CreateAccountForm() {
         },
     });
 
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
     const { signUp } = useUserAuth();
     const navigate = useNavigate();
 
-    const handleSubmitsignUp = async (e) => {
-        e.preventDefault();
+    const handleSubmitsignUp = async (formValues) => {
         setError("");
         try {
-            await signUp(email, password);
+            signUp(formValues.email, formValues.password).then((userCred) => {
+                const { user } = userCred;
+                updateProfile(user, { displayName: formValues.name });
+            });
             navigate("/");
         } catch (err) {
             setError(err.message);
@@ -39,31 +39,19 @@ function CreateAccountForm() {
     };
 
     return (
-        <form onSubmit={handleSubmitsignUp} className="form-signup-container">
+        <form
+            onSubmit={handleSubmit(handleSubmitsignUp)}
+            className="form-signup-container"
+        >
             {error && <Alert variant="danger">{error}</Alert>}
-            <div className="name-surename-components">
-                <input
-                    {...register("name", {
-                        required: { value: true, message: "This is required!" },
-                    })}
-                    placeholder="Name"
-                    onChange={(e) => {
-                        setName(e.target.value);
-                    }}
-                    className="name-imput"
-                />
 
-                <input
-                    {...register("surname", {
-                        required: { value: true, message: "This is required!" },
-                    })}
-                    placeholder="Surname"
-                    onChange={(e) => {
-                        setSurname(e.target.value);
-                    }}
-                    className="surename-input"
-                />
-            </div>
+            <input
+                {...register("name", {
+                    required: { value: true, message: "This is required!" },
+                })}
+                placeholder="First Name"
+                className="name-imput"
+            />
 
             <input
                 {...register("email", {
@@ -74,9 +62,6 @@ function CreateAccountForm() {
                     // },
                 })}
                 placeholder="Email"
-                onChange={(e) => {
-                    setEmail(e.target.value);
-                }}
                 className="email-input-create-account"
             />
 
@@ -87,9 +72,6 @@ function CreateAccountForm() {
                 })}
                 placeholder="Password"
                 type="password"
-                onChange={(e) => {
-                    setPassword(e.target.value);
-                }}
                 className="password-input-create-account"
             />
 
