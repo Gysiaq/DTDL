@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import "./DailyTask.css";
 import CalendarSection from "./Calendar";
 import DailyTodo from "./DailyTodo";
@@ -18,8 +18,10 @@ function DailyTask() {
             todo.deadlineDate === moment().format("YYYY-MM-DD") && todo.complete
     );
 
-    console.log(dailyTodos);
-    console.log(dailyCompleteTodos);
+    const isLineSeparatorVisible = useMemo(
+        () => dailyCompleteTodos.length > 0 && dailyTodos.length > 0,
+        [dailyCompleteTodos, dailyTodos]
+    );
 
     return (
         <div className="daily-container" id="dailytask">
@@ -36,7 +38,10 @@ function DailyTask() {
                         {dailyTodos?.map((todo) => (
                             <DailyTodo todo={todo} key={todo.id} />
                         ))}
-                        <hr className="dailylist-hr"></hr>
+
+                        {isLineSeparatorVisible && (
+                            <hr className="dailylist-hr"></hr>
+                        )}
 
                         {dailyCompleteTodos?.map((todo) => (
                             <div>

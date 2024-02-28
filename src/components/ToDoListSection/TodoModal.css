@@ -10,13 +10,12 @@
     top: 0;
     right: 0;
     bottom: 0;
-
 }
 .modal-todo-position {
     display: flex;
     justify-content: center;
-    align-content: center;
-}
+    align-items: center;
+    } 
 
 .modal-todo-container {
     width: 600px;

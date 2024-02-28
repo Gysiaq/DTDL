@@ -1,25 +1,25 @@
 
-.note-edit-form-title {
+.note-form-title {
     margin-bottom: 5px;
 }
 
-.note-edit-form-title-input{
+.note-form-title-input{
     width: 550px;
     height: 35px;
     border: 4px solid;
     border-color: #F8F1F1;
 }
-.note-edit-form-title-input:focus,
-.note-edit-form-title-input:active {
+.note-form-title-input:focus,
+.note-form-title-input:active {
     outline: none;
     box-shadow: none;
 }
 
-.note-edit-form-description {
+.note-form-description {
     margin-top: 40px;
     margin-bottom: 5px;
 }
-.note-edit-form-description-input{
+.note-form-description-input{
     
     max-width: 550px;
     min-width: 550px;
@@ -30,21 +30,21 @@
     border-color: #F8F1F1;
 }
 
-.note-edit-form-description-input:focus,
-.note-edit-form-description-input:active {
+.note-form-description-input:focus,
+.note-form-description-input:active {
     outline: none;
     box-shadow: none;
 }
 
 
-.note-edit-form-save-button-position {
+.note-form-save-button-position {
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
     margin-right: 5px;
 }
 
-.note-edit-form-save-button {
+.note-form-save-button {
     cursor: pointer;
     width: 100px;
     height: 50px;
@@ -56,7 +56,7 @@
 
 }
 
-.note-edit-form-save-button:hover {
+.note-form-save-button:hover {
     border-color: black;
     background-color: #025464;
     color: #F8F1F1;

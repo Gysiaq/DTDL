@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "./MainPage.css";
 import { Link } from "react-scroll";
 
 function MainPage() {

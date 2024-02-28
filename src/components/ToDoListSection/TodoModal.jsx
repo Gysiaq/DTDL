@@ -5,7 +5,7 @@ import AddTodoForm from "./AddTodoForm";
 
 function TodoModal({ setIsTodoModalOpen }) {
     return (
-        <div className="modal-todo-background modal-edit-position">
+        <div className="modal-todo-background modal-todo-position">
             <div className="modal-todo-container">
                 <div className="modal-todo-close-button-position">
                     <button
