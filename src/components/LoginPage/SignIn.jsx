@@ -47,7 +47,7 @@ function SignIn() {
                 <LoginForm />
                 <div className="question-sign-up">
                     <p className="paragraph sing-in-question">
-                        You doesn't have account yet?
+                        You don't have an account yet?
                     </p>
 
                     <Link className="paragraph sing-up-button" to="/signup">

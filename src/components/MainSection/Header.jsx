@@ -21,7 +21,7 @@ function Header() {
             <img src="src\images\LOGO.png" className="header-image" />
             <div>
                 <span className="header-user paragraph">
-                    Hello, {user.displayName}
+                    Hello, {user.displayName.split(" ")[0]}
                 </span>
                 <button
                     onClick={handleLogOut}

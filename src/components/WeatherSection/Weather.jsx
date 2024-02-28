@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import "./Weather.css";
 import getWeather from "./getWeather";
 import CurrentWeather from "./CurrentWeather";
@@ -68,6 +68,8 @@ function Weather() {
             locationError
         );
     };
+
+    useEffect(getLocalization, []);
 
     return (
         <div className="weather-container" id="weather">

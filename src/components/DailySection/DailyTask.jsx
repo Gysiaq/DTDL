@@ -29,7 +29,6 @@ function DailyTask() {
 
             <div className="daiylist-callender-container">
                 <div className="callender">
-                    <h4 className="heading-4">Calendar</h4>
                     <CalendarSection />
                 </div>
 

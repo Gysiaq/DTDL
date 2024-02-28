@@ -20,7 +20,7 @@ function SignUp() {
 
                 <div className="question-sign-up">
                     <p className="paragraph sing-up-question">
-                        You have already account?
+                        Do you already have an account?
                     </p>
 
                     <Link className="paragraph sing-up-button" to="/">
@@ -55,7 +55,7 @@ function SignUp() {
                         className="sign-up-image"
                     />
                     <h3 className="heading-4 motiv-text">
-                        Join for new experience
+                        Join for a new experience
                     </h3>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import "./Search.css";
 
 function Search({ onSearchChange }) {
-    const [searchLocation, setSearchLocation] = useState(null);
+    const [location, setLocation] = useState(null);
 
     async function loadOptions(inputValue) {
         const response = await fetch(
@@ -24,9 +24,9 @@ function Search({ onSearchChange }) {
     }
 
     const handleOnChange = (searchData) => {
-        setSearchLocation(searchData);
+        setLocation(searchData);
         onSearchChange(searchData);
-        setSearchLocation(" ");
+        setLocation(" ");
     };
 
     return (
@@ -34,7 +34,7 @@ function Search({ onSearchChange }) {
             className="location-input paragraph"
             placeholder="Localization..."
             debounceTimeout={700}
-            value={searchLocation}
+            value={location}
             onChange={handleOnChange}
             loadOptions={loadOptions}
         />

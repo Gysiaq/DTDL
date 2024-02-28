@@ -93,14 +93,14 @@ function LoginForm() {
                 </p>
             </div>
 
-            <div className="buttom-forgot-password-container">
+            {/* <div className="buttom-forgot-password-container">
                 <button
                     type="button"
                     className="paragraph button-forgot-password"
                 >
                     Forgot password?
                 </button>
-            </div>
+            </div> */}
 
             <input
                 type="submit"
