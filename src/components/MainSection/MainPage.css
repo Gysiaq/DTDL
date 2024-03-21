@@ -23,6 +23,7 @@
 .h5-home-welcome-style {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 64px;
     color: white;
     font-weight: 200;
@@ -63,4 +64,11 @@
 .home-image {
     height: 600px;
     width: 600px;
+}
+
+@media (max-width: 768px) {
+    .home-image {
+        height: 450px;
+        width: 450px;
+    }
 }

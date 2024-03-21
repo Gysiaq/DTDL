@@ -21,8 +21,9 @@
     line-height: 30px;
     font-weight: 500;
     font-family: 'Nunito Sans', sans-serif;
-
-
+    max-height: 60vh !important;
+    max-width: 90vw !important;
+    
 }
 .kAgyfY {
     display: flex;

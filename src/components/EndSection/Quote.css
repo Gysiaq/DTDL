@@ -14,7 +14,7 @@
 .quote-div {
     width: 836px;
     height: 200px;
-    margin-left: 64px;
+    gap: 64px;
 }
 .quote-style {
     display: flex;
@@ -47,9 +47,9 @@
 } 
 
 
-@media (max-width:1000px) {
+@media (max-width:768px) {
     .quote-image {
-        width: 550px;
-        height: 550px;
+        width: 450px;
+        height: 450px;
     }
 }

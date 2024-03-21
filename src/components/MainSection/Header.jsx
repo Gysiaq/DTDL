@@ -22,7 +22,7 @@ function Header() {
                 src={require("../../images/LOGO.png")}
                 className="header-image"
             />
-            <div>
+            <div className="name-button-log-out">
                 <span className="header-user paragraph">
                     Hello, {user.displayName.split(" ")[0]}
                 </span>
