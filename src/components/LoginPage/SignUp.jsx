@@ -7,9 +7,13 @@ function SignUp() {
     return (
         <div className="signup-container">
             <div className="signup-left">
+                <img
+                    src={require("../../images/LOGO_XXL.png")}
+                    className="sign-up-image-logo"
+                />
                 <div className="signup-text">
                     <div className="signup-text-div">
-                        <div className="heading-2 signup-text-h2">
+                        <div className="heading-3 signup-text-h3">
                             Create Account
                         </div>
                     </div>
@@ -28,12 +32,12 @@ function SignUp() {
                     </Link>
                 </div>
             </div>
-            <div className="waves-singup">
+            {/* <div className="waves-singup">
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 200 100vh"
                     width="200"
-                    height="100vh"
+                    height="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 200 100%"
                     fill="none"
                 >
                     <path
@@ -54,11 +58,11 @@ function SignUp() {
                         src={require("../../images/Mobile_login-pana.png")}
                         className="sign-up-image"
                     />
-                    <h3 className="heading-4 motiv-text">
+                    <h3 className="heading-4 motive-text">
                         Join for a new experience
                     </h3>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

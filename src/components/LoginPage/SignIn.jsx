@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function SignIn() {
     return (
         <div className="signin-container">
-            <div className="signin-left">
+            {/* <div className="signin-left">
                 <img
                     src={require("../../images/LOGO_XXL.png")}
                     className="sign-in-image-logo"
@@ -34,16 +34,18 @@ function SignIn() {
                         fill="#025464"
                     />
                 </svg>
-            </div>
+            </div> */}
 
             <div className="signin-right">
+                <img
+                    src={require("../../images/LOGO_XXL.png")}
+                    className="sign-in-image-logo"
+                />
                 <div className="login-text">
                     <div className="login-text-div">
                         <div className="heading-2 login-text-h2">Login</div>
                     </div>
                 </div>
-                {/* <img src="src\images\Ellipse310.png" className="elipse310" /> */}
-                {/* <img src="src\images\Ellipse150.png" className="elipse150-1" /> */}
                 <LoginForm />
                 <div className="question-sign-up">
                     <p className="paragraph sing-in-question">

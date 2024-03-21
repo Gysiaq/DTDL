@@ -45,35 +45,50 @@ function CreateAccountForm() {
         >
             {error && <Alert variant="danger">{error}</Alert>}
 
-            <input
-                {...register("name", {
-                    required: { value: true, message: "This is required!" },
-                })}
-                placeholder="First Name"
-                className="name-imput"
-            />
+            <div>
+                <p className="paragraph paragraph-email">
+                    {<i className="bi bi-person"></i>} Name
+                </p>
+                <input
+                    {...register("name", {
+                        required: { value: true, message: "This is required!" },
+                    })}
+                    placeholder="First Name"
+                    className="name-imput"
+                />
+            </div>
 
-            <input
-                {...register("email", {
-                    required: { value: true, message: "This is required!" },
-                    // pattern: {
-                    //     value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                    //     message: "Incorrect email",
-                    // },
-                })}
-                placeholder="Email"
-                className="email-input-create-account"
-            />
+            <div>
+                <p className="paragraph paragraph-email">
+                    {<i className="bi bi-person"></i>} E-mail
+                </p>
+                <input
+                    {...register("email", {
+                        required: { value: true, message: "This is required!" },
+                        // pattern: {
+                        //     value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                        //     message: "Incorrect email",
+                        // },
+                    })}
+                    placeholder="Email"
+                    className="email-input-create-account"
+                />
+            </div>
 
-            <input
-                {...register("password", {
-                    required: { value: true, message: "This is required!" },
-                    minLength: { value: 8, message: "Min length is 8" },
-                })}
-                placeholder="Password"
-                type="password"
-                className="password-input-create-account"
-            />
+            <div>
+                <p className="paragraph paragraph-password">
+                    {<i class="bi bi-lock"></i>} Password
+                </p>
+                <input
+                    {...register("password", {
+                        required: { value: true, message: "This is required!" },
+                        minLength: { value: 8, message: "Min length is 8" },
+                    })}
+                    placeholder="Password"
+                    type="password"
+                    className="password-input-create-account"
+                />
+            </div>
 
             <input
                 type="submit"

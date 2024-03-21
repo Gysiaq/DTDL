@@ -1,37 +1,32 @@
 
 
 .name-imput {
-    width: 300px;
-    height: 56px;
+    width: 25rem;
+    height: 3.5rem;
     border: 4px solid black;
     margin-bottom: 4px;
     text-indent: 15px;
+    margin-bottom: 1rem;
 }
 
-.surename-input {
-    width: 300px;
-    height: 56px;
-    border: 4px solid black;
-    margin-bottom: 4px;
-    text-indent: 15px;
-}
+
 
 .email-input-create-account {  
-    width: 300px;
-    height: 56px;
+    width: 25rem;
+    height: 3.5rem;
     border: 4px solid black;
     margin-bottom: 4px;
     text-indent: 15px;
-    margin-top: 24px;
+    margin-bottom: 1rem;
 }
 
 .password-input-create-account {
-    width: 300px;
-    height: 56px;
+    width: 25rem;
+    height: 3.5rem;
     border: 4px solid black;
     margin-bottom: 4px;
     text-indent: 15px;
-    margin-top: 24px;
+    margin-bottom: 1rem;
 }
 
 .form-signup-container {
@@ -45,12 +40,12 @@
 
 .input-submit-signup  {
     font-weight: bold;
-    width: 355px;
-    height: 48px;
+    width: 12rem;
+    height: 3rem;
     flex-shrink: 0;
     border: 4px solid black;
     background: var(--Gradient---Button-Gradient, linear-gradient(126deg, #E8AA42 21.97%, #E57C23 77.56%));
-    margin-top: 48px;
+    margin-top: 3rem;
 }
 
 

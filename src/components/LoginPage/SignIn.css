@@ -1,13 +1,15 @@
 .signin-container {
-    display: flex;
     overflow: hidden;
-    background-image: url("../../images/sign_in_background.png");
-   
-    
-    
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/background_dtdl.png"); 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -100;
 }
 
-.signin-left{
+/* .signin-left{
     flex: 40%;
     height: 100vh;
     background-color: #025464;
@@ -18,35 +20,31 @@
     align-items: center;
 }
 
-.sign-in-image-logo {
-    display: flex;
-    width: 579px;
-    justify-content: center;
-    /* align-items: flex-start; */
-    gap: 8px;
-    margin-top: 48px;
-    
-}
+
 
 .sign-in-image {
-    height: 650px;
-    width: 650px;
-    margin-top: 6px;
-    margin-bottom: 42px;
+    height: 35rem;
+    width:37rem;
+    margin-top: 0.375rem;
+    margin-bottom: 2.625rem;
 }
 
 .motiv-text {
-    color: #E8AA42;
-}
+    color: #E8AA42; */
+
 
 .signin-right {
-    flex: 50%;
     display: flex;
     justify-content: center;
-    margin-top: 64px;
+    align-items: center;
+    margin-top: 2rem;
     flex-direction: column;
     
 
+}
+
+.sign-in-image-logo {
+    width:26rem;
 }
 
 .login-text{
@@ -56,15 +54,14 @@
 }
 
 .login-text-div {
-   position: relative;
-    float:left;
-    height: 88px;
-    width: 800px;
+   
+    height: 5.5rem;
+    width: 40rem;
     border: 4px dashed  black ;
     background: rgb(229,124,35);
     background: linear-gradient(135deg, rgba(229,124,35,1) 0%, rgba(230,143,48,1) 12%, rgba(231,156,56,1) 25%, rgba(232,170,66,1) 41%, rgba(236,185,99,1) 56%, rgba(239,196,125,1) 72%, rgba(244,217,171,1) 86%, rgba(242,226,199,1) 100%);
-    margin-top: -44px;
-    margin-bottom: 64px;
+    margin-top: 2.75rem;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,8 +71,8 @@
 .login-text-h2 {
     
 
-    width: 300px;
-    height: 104px;
+    width: 16rem;
+    height: 6.5rem;
     background-color: white;
     border: 4px dashed  black;
     display: flex;
@@ -85,12 +82,20 @@
 }
 
 
-.question-sign-up {
+.question-sign-in {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-
+@media (max-width: 767px) {
+    .login-text-div {
+        width: 30rem;
+    }
+    .login-text-h2 {
+        width: 13rem;
+    }
+    
+}
 

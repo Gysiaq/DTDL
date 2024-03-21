@@ -5,55 +5,115 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-size: 21px;
+    font-size: 1rem;
+  line-height: 1.4rem;
 }
 
+.paragraph {
+  font-size: 1rem;
+line-height: 1.4rem;
+  font-weight: 500;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+
+@media (min-width: 768px) {
+  
 .heading-1 {
-    font-size: 88px;
-    line-height: 100px;
+    font-size: 5.61rem;
+  line-height: 7.854rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .heading-2 {
-    font-size: 66px;
-    line-height: 92px;
+    font-size: 4.209rem;
+  line-height: 5.8926rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .heading-3 {
-    font-size: 50px;
-    line-height: 70px;
+    font-size: 3.157rem;
+  line-height: 4.4198rem;
     font-weight: lighter;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .heading-4 {
-    font-size: 37px;
-    line-height: 52px;
+    font-size: 2.369rem;
+  line-height: 3.3166rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .heading-5 {
-    font-size: 27px;
-    line-height: 38px;
+    font-size: 1.777rem;
+  line-height: 2.4878rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .heading-6 {
-    font-size: 21px;
-    line-height: 30px;
+    font-size: 1.333rem;
+  line-height: 1.8662rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
 
 }
 
-.paragraph {
-    font-size: 21px;
-    line-height: 30px;
-    font-weight: 500;
-    font-family: 'Nunito Sans', sans-serif;
 }
+
+
+
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: 2.986rem;
+    line-height: 4.180rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif ;
+  }
+  
+  .heading-2 {
+    font-size: 2.488rem;
+    line-height: 3.483rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif ;
+  }
+  
+  .heading-3 {
+    font-size: 2.488rem;
+    line-height: 3.483rem;
+    font-weight: lighter;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  
+  .heading-4 {
+    font-size: 1.728rem;
+    line-height: 2.419rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  
+  .heading-5 {
+    font-size: 1.44rem;
+    line-height: 2.016rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    
+  }
+  
+  .heading-6 {
+    font-size: 1.2rem;
+    line-height: 1.68rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif; 
+  }
+}
+
+
+
+
+
