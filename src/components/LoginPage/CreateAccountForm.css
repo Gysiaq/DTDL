@@ -45,7 +45,7 @@
     flex-shrink: 0;
     border: 4px solid black;
     background: var(--Gradient---Button-Gradient, linear-gradient(126deg, #E8AA42 21.97%, #E57C23 77.56%));
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 

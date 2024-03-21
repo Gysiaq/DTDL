@@ -21,11 +21,11 @@ function ContextProvider(props) {
             const docRef = await addDoc(collection((db, "todo"), todo));
             const querySnapshot = await addDoc(doc(collection(db, "todo")));
             querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
+                // console.log(`${doc.id} => ${doc.data()}`);
             });
-            console.log("Document written with ID: ", docRef.id);
+            // console.log("Document written with ID: ", docRef.id);
         } catch (e) {
-            console.error("Error adding document: ", e);
+            // console.error("Error adding document: ", e);
         }
     };
 

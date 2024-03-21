@@ -9,12 +9,13 @@
 }
 
 .home-welcom-nav{
-    margin-right: 96px;
+    gap: 96px;
 }
 
 .h1-style {
     display: flex;
     justify-content: center;
+    
     color: white;
 
 }
@@ -31,6 +32,7 @@
     display: flex;
     justify-content: center;
     padding-top: 64px;
+    flex-wrap: wrap;
 
 }
 

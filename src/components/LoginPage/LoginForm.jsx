@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
-import { Alert } from "@mui/material";
 
 function LoginForm() {
     const {
         register,
-        watch,
+        handleSubmit,
+        setError,
         formState: { errors },
     } = useForm({
         defaultValues: {
@@ -20,11 +20,11 @@ function LoginForm() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    // const [error, setError] = useState("");
     const { logIn, googleSignIn } = useUserAuth();
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSubmitSignIn = async (e) => {
         e.preventDefault();
         setError("");
         try {
@@ -47,11 +47,14 @@ function LoginForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="loginform-container">
-            {error && <Alert variant="danger">{error}</Alert>}
+        <form
+            onSubmit={handleSubmit(handleSubmitSignIn)}
+            className="loginform-container"
+        >
+            {/* {error && alert({ error })} */}
             <div>
                 <p className="paragraph paragraph-email">
-                    {<i className="bi bi-person"></i>} E-mail
+                    {<i className="bi bi-person"></i>} E-mail *
                 </p>
                 <input
                     {...register("email", {
@@ -74,7 +77,7 @@ function LoginForm() {
 
             <div>
                 <p className="paragraph paragraph-password">
-                    {<i class="bi bi-lock"></i>} Password
+                    {<i class="bi bi-lock"></i>} Password *
                 </p>
                 <input
                     {...register("password", {

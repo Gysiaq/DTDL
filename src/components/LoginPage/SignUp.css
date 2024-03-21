@@ -74,13 +74,13 @@
 
 .signup-text-div {
    position: relative;
-    height: 5.5rem;
+    height: 4.5rem;
     width: 40rem;
     border: 4px dashed  black ;
     background: rgb(229,124,35);
     background: linear-gradient(135deg, rgba(229,124,35,1) 0%, rgba(230,143,48,1) 12%, rgba(231,156,56,1) 25%, rgba(232,170,66,1) 41%, rgba(236,185,99,1) 56%, rgba(239,196,125,1) 72%, rgba(244,217,171,1) 86%, rgba(242,226,199,1) 100%);
     margin-top: 2.75rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +89,7 @@
 
 .signup-text-h3 {
     width: 26rem;
-    height: 6.5rem;
+    height: 5.5rem;
     background-color: white;
     border: 4px dashed  black;
     display: flex;

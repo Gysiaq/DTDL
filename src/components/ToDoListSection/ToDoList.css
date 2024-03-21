@@ -17,7 +17,7 @@
 .h2-style-todolist {
     display: flex;
     justify-content: center;
-    margin-bottom: 48px;
+    padding-bottom: 48px;
     color: #F8F1F1;
 }
 

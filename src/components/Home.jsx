@@ -13,8 +13,6 @@ import Quote from "./EndSection/Quote";
 import { useUserAuth } from "../context/UserAuthContext";
 
 function Home() {
-    const { user } = useUserAuth();
-    console.log("User:", user);
     return (
         <div>
             <Header />

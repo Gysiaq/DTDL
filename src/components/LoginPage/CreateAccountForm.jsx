@@ -5,13 +5,11 @@ import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./CreateAccountForm.css";
 import { updateProfile } from "firebase/auth";
-import Header from "../MainSection/Header";
 
 function CreateAccountForm() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm({
         defaultValues: {
@@ -25,7 +23,7 @@ function CreateAccountForm() {
     const { signUp } = useUserAuth();
     const navigate = useNavigate();
 
-    const handleSubmitsignUp = async (formValues) => {
+    const handleSubmitSignUp = async (formValues) => {
         setError("");
         try {
             signUp(formValues.email, formValues.password).then((userCred) => {
@@ -40,14 +38,12 @@ function CreateAccountForm() {
 
     return (
         <form
-            onSubmit={handleSubmit(handleSubmitsignUp)}
+            onSubmit={handleSubmit(handleSubmitSignUp)}
             className="form-signup-container"
         >
-            {error && <Alert variant="danger">{error}</Alert>}
-
             <div>
                 <p className="paragraph paragraph-email">
-                    {<i className="bi bi-person"></i>} Name
+                    {<i className="bi bi-person"></i>} Name *
                 </p>
                 <input
                     {...register("name", {
@@ -56,28 +52,34 @@ function CreateAccountForm() {
                     placeholder="First Name"
                     className="name-imput"
                 />
+                <p className="paragraph error-message-email">
+                    {errors.name?.message}
+                </p>
             </div>
 
             <div>
                 <p className="paragraph paragraph-email">
-                    {<i className="bi bi-person"></i>} E-mail
+                    {<i className="bi bi-person"></i>} E-mail *
                 </p>
                 <input
                     {...register("email", {
                         required: { value: true, message: "This is required!" },
-                        // pattern: {
-                        //     value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                        //     message: "Incorrect email",
-                        // },
+                        pattern: {
+                            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                            message: "Incorrect email",
+                        },
                     })}
                     placeholder="Email"
                     className="email-input-create-account"
                 />
+                <p className="paragraph error-message-email">
+                    {errors.email?.message}
+                </p>
             </div>
 
             <div>
                 <p className="paragraph paragraph-password">
-                    {<i class="bi bi-lock"></i>} Password
+                    {<i class="bi bi-lock"></i>} Password *
                 </p>
                 <input
                     {...register("password", {
@@ -88,6 +90,9 @@ function CreateAccountForm() {
                     type="password"
                     className="password-input-create-account"
                 />
+                <p className="paragraph error-message-email">
+                    {errors.password?.message}
+                </p>
             </div>
 
             <input

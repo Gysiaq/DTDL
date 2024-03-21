@@ -35,7 +35,7 @@ function CalendarSection(props) {
             todayColor="#E57C23"
             indicatorColor="#E57C23"
             detailDateFormat="MM/DD/YYYY"
-            style={{ height: 670, width: 900 }}
+            style={{ height: 600, width: 800 }}
         />
     );
 }

@@ -48,6 +48,8 @@
 
 
 .daily-todo-description {
+    display: flex;
+    align-items: center;
     width: 100px;
     white-space: nowrap;
     overflow: hidden;

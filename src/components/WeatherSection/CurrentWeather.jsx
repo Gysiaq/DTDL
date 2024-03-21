@@ -16,19 +16,19 @@ function CurrentWeather({ data, dataHourly, searchCityName }) {
                 {searchCityName.city}, {searchCityName.countryCode}
             </h3>
             <h5 className="h5-style-currentwather-date">{currentDate}</h5>
-            {dataHourly?.slice(0, 1).map((firstElememt, idx) => {
+            {dataHourly?.slice(0, 1).map((firstElement, idx) => {
                 return (
                     <div key={idx}>
                         <div className="weather-today-container">
                             <span className="current-weather-icon">
-                                {firstElememt?.iconCode.icon}
+                                {firstElement?.iconCode.icon}
                             </span>
                             <div className="weather-today-details">
                                 <h3 className="heading-3">
-                                    {firstElememt?.temp}°C
+                                    {firstElement?.temp}°C
                                 </h3>
                                 <h4 className="heading-4 h4-style-weather-details">
-                                    {firstElememt?.iconCode.desc}
+                                    {firstElement?.iconCode.desc}
                                 </h4>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ function CurrentWeather({ data, dataHourly, searchCityName }) {
                                         Real fell:{" "}
                                     </span>
                                     <span className="paragraph">
-                                        {firstElememt?.apparentTemperature} °C
+                                        {firstElement?.apparentTemperature} °C
                                     </span>
                                 </div>
 
@@ -51,7 +51,7 @@ function CurrentWeather({ data, dataHourly, searchCityName }) {
                                         Wind Speed:{" "}
                                     </span>
                                     <span className="paragraph">
-                                        {firstElememt?.windSpeed} km/h
+                                        {firstElement?.windSpeed} km/h
                                     </span>
                                 </div>
                             </div>
@@ -62,19 +62,19 @@ function CurrentWeather({ data, dataHourly, searchCityName }) {
                                         Humidity:{" "}
                                     </span>
                                     <span className="paragraph">
-                                        {firstElememt?.relativeHumidity} %
+                                        {firstElement?.relativeHumidity} %
                                     </span>
                                 </div>
                                 <div>
                                     <img
-                                        src="src\images\barometer.png"
+                                        src={require("../../images/barometer.png")}
                                         className="pressure-icon"
                                     ></img>{" "}
                                     <span className="paragraph weather-details-description-span">
                                         Pressure:{" "}
                                     </span>
                                     <span className="paragraph">
-                                        {firstElememt?.pressureMSL} hPa
+                                        {firstElement?.pressureMSL} hPa
                                     </span>
                                 </div>
                             </div>

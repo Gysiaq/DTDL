@@ -9,7 +9,6 @@ function NotesList() {
 
     const addNote = (note) => {
         setNoteList((oldList) => [...oldList, note]);
-        console.log(note);
     };
 
     const deleteNote = (id) => {

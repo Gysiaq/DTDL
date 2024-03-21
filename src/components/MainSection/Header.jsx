@@ -13,7 +13,7 @@ function Header() {
             await logOut();
             navigate("/");
         } catch (err) {
-            console.log(err.message);
+            // console.log(err.message);
         }
     };
     return (
