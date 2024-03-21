@@ -1,10 +1,15 @@
 .signup-container {
-    display: flex;
     overflow: hidden;
-    background-image: url("../../images/sign_up_background_vol2.png");
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/background_dtdl.png"); 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -100;
 }
 
-.signup-right{
+/* .signup-right{
     flex: 40%;
     height: 100vh;
     background-color: #025464;
@@ -16,46 +21,50 @@
 
 .sign-up-image-logo {
     display: flex;
-    width: 579px;
+    width: 36rem;
     justify-content: center;
-    gap: 8px;
-    margin-top: 48px;
+    gap: 0.5rem;
+    margin-top: 1rem;
     
 }
 
 .sign-up-image {
-    height: 650px;
-    width: 600px;
-    margin-top: 6px;
-    margin-bottom: 22px;
+    height: 35rem;
+    width: 37rem;
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.motiv-text {
+.motive-text {
     color: #E8AA42;
     display: flex;
     justify-content: center;
-}
+} */
 
 
-.waves-singup{
+/* .waves-singup{
     rotate: 180deg;
-}
+} */
 
 
 .signup-left {
-    flex: 50%;
     display: flex;
     justify-content: center;
-    margin-top: 64px;
+    align-items: center;
+    margin-top: 2rem;
     flex-direction: column;
     
 
 }
 
-
+.sign-up-image-logo {
+    width: 26rem;
+ 
+    
+}
 
 .signup-text{
     display: flex;
@@ -65,27 +74,28 @@
 
 .signup-text-div {
    position: relative;
-    height: 88px;
-    width: 800px;
+    height: 5.5rem;
+    width: 40rem;
     border: 4px dashed  black ;
     background: rgb(229,124,35);
     background: linear-gradient(135deg, rgba(229,124,35,1) 0%, rgba(230,143,48,1) 12%, rgba(231,156,56,1) 25%, rgba(232,170,66,1) 41%, rgba(236,185,99,1) 56%, rgba(239,196,125,1) 72%, rgba(244,217,171,1) 86%, rgba(242,226,199,1) 100%);
-    margin-top: 44px;
-    margin-bottom: 64px;
+    margin-top: 2.75rem;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
      
 }
 
-.signup-text-h2 {
-    width: 550px;
-    height: 104px;
+.signup-text-h3 {
+    width: 26rem;
+    height: 6.5rem;
     background-color: white;
     border: 4px dashed  black;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 500;
 
 }
 
@@ -106,5 +116,16 @@
 }
 
 .question-sign-up {
-    margin-top: 64px;
+    margin-top: 3rem;
 }
+
+@media (max-width: 767px) {
+    .signup-text-div {
+        width: 40rem;
+    }
+    .signup-text-h2 {
+        width: 20rem;
+    }
+    
+}
+
